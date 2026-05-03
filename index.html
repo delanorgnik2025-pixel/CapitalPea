@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CapitalPea | Birmingham, AL</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:#F0EBE3;color:#2D1B2E;line-height:1.5}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+button{cursor:pointer;font-family:inherit;border:none;background:none}
+
+body{background-color:#F0EBE3;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4c5b5' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+
+.font-hand{font-family:'Caveat',cursive}
+.container{max-width:1200px;margin:0 auto;padding:0 16px}
+.hide{display:none!important}
+.flex{display:flex}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.flex-wrap{flex-wrap:wrap}.gap-1{gap:4px}.gap-2{gap:8px}.gap-3{gap:12px}.gap-4{gap:16px}.gap-6{gap:24px}
+.grid{display:grid}.grid-cols-2{grid-template-columns:repeat(2,1fr)}
+.text-center{text-align:center}
+.w-full{width:100%}.h-full{height:100%}
+.relative{position:relative}.fixed{position:fixed}.absolute{position:absolute}
+.mx-auto{margin-left:auto;margin-right:auto}
+.mb-1{margin-bottom:4px}.mb-2{margin-bottom:8px}.mb-3{margin-bottom:12px}.mb-4{margin-bottom:16px}.mb-6{margin-bottom:24px}.mb-8{margin-bottom:32px}
+.mt-2{margin-top:8px}.mt-4{margin-top:16px}.mt-6{margin-top:24px}.mt-8{margin-top:32px}
+.p-2{padding:8px}.p-3{padding:12px}.p-4{padding:16px}.p-6{padding:24px}
+.py-2{padding-top:8px;padding-bottom:8px}.py-3{padding-top:12px;padding-bottom:12px}.py-4{padding-top:16px;padding-bottom:16px}.py-8{padding-top:32px;padding-bottom:32px}.py-12{padding-top:48px;padding-bottom:48px}
+.px-3{padding-left:12px;padding-right:12px}.px-4{padding-left:16px;padding-right:16px}.px-6{padding-left:24px;padding-right:24px}
+.rounded-sm{border-radius:4px}.rounded-full{border-radius:9999px}
+.paper-cream{background:#FAF6F0}.paper-pink{background:#FFE4EC}.paper-mint{background:#E0F5E8}.paper-yellow{background:#FFF8DC}.paper-lavender{background:#F0E6FF}
+
+.ransom-letter{display:inline-flex;align-items:center;justify-content:center;color:#fff;font-weight:900;text-transform:uppercase;letter-spacing:0.05em;box-shadow:1px 2px 0 rgba(0,0,0,0.15);padding:2px 8px;margin:1px;font-size:12px}
+.ransom-big{font-size:20px;padding:4px 10px;margin:2px}
+@media(min-width:640px){.ransom-big{font-size:32px;padding:6px 14px}}
+@media(min-width:768px){.ransom-big{font-size:48px;padding:8px 18px}}
+
+.polaroid{background:#fff;padding:6px 6px 20px 6px;box-shadow:2px 3px 10px rgba(0,0,0,0.12)}
+.tape{position:relative}
+.tape::before{content:'';position:absolute;top:-10px;left:50%;transform:translateX(-50%) rotate(-3deg);width:50px;height:16px;background:rgba(255,182,193,0.65);z-index:5;box-shadow:0 1px 2px rgba(0,0,0,0.08)}
+
+.torn-top{border-top:3px dashed #D4A5B8}
+.torn-bottom{border-bottom:3px dashed #D4A5B8}
+
+nav{z-index:50;transition:all .3s}
+.nav-fixed{position:fixed;top:0;left:0;right:0;background:rgba(250,246,240,0.95);box-shadow:0 2px 10px rgba(0,0,0,0.08)}
+.nav-link{font-family:'Caveat',cursive;font-size:18px;color:#8B1546;transition:transform .2s;background:none;border:none;cursor:pointer}
+.nav-link:hover{transform:scale(1.1)}
+
+.mobile-menu{position:fixed;inset:0;z-index:55;background:rgba(250,246,240,0.98);padding-top:80px;padding-left:24px;padding-right:24px}
+.mobile-menu button{display:block;width:100%;text-align:left;font-family:'Caveat',cursive;font-size:24px;padding:12px 0;color:#E91E63;background:none;border:none}
+
+.hero-doodle{position:absolute;opacity:.5;pointer-events:none}
+.hero-polaroid{width:100px}
+@media(min-width:640px){.hero-polaroid{width:140px}}
+
+.cat-pill{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;padding:8px 16px;border-radius:4px;border:2px solid transparent;transition:all .2s;white-space:nowrap}
+.cat-pill.active{background:#E91E63;color:#fff}
+.cat-pill.inactive{background:rgba(255,255,255,0.5);color:#6B1A3A;border:2px dashed #D4A5B8}
+.service-card{background:#FFE4EC;padding:8px;cursor:pointer;transition:transform .2s;box-shadow:2px 2px 0 rgba(0,0,0,0.08)}
+.service-card:hover{transform:scale(1.03)}
+.service-img{width:100%;aspect-ratio:4/3;object-fit:cover;border:2px solid #fff}
+
+.port-card{background:#fff;padding:6px 6px 16px 6px;box-shadow:2px 3px 10px rgba(0,0,0,0.1);cursor:pointer;transition:transform .2s;break-inside:avoid;margin-bottom:8px}
+.port-card:hover{transform:scale(1.02)}
+.port-card img{width:100%}
+
+.res-card{background:#FAF6F0;padding:16px;box-shadow:2px 2px 0 rgba(0,0,0,0.06)}
+.crisis-box{background:#FFF8DC;border:2px dashed #FF9800;padding:12px}
+
+.input-wrap{position:relative}
+.input-wrap svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:#D4A5B8;pointer-events:none}
+.input-wrap textarea ~ svg{top:20px;transform:none}
+.scrap-input{width:100%;padding:10px 10px 10px 34px;border:2px dashed #E8B4C0;border-radius:4px;font-size:13px;font-family:inherit;color:#4A1A2E;background:#fff}
+.scrap-input:focus{outline:none;border-color:#E91E63}
+textarea.scrap-input{padding-left:34px;padding-top:10px;resize:none}
+
+footer{background:#2D1B2E;color:#fff;border-top:3px dashed #E91E63}
+
+.modal-overlay{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center;padding:16px}
+.modal-box{background:#fff;width:100%;max-width:400px;max-height:90vh;overflow-y:auto;box-shadow:4px 4px 0 rgba(0,0,0,0.15)}
+.modal-header{display:flex;align-items:center;justify-content:space-between;padding:16px;border-bottom:2px dashed #F5D5E0}
+
+.chat-btn{position:fixed;bottom:16px;right:16px;z-index:50;width:48px;height:48px;border-radius:50%;background:#E91E63;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:transform .2s;border:none;cursor:pointer;font-size:20px}
+.chat-btn:hover{transform:scale(1.1)}
+.chat-panel{position:fixed;bottom:16px;right:16px;z-index:50;width:340px;max-width:calc(100vw - 32px);height:460px;background:#fff;display:flex;flex-direction:column;box-shadow:3px 3px 0 rgba(0,0,0,0.15)}
+.chat-header{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;background:#FFF0F3;border-bottom:2px dashed #F5D5E0}
+.chat-messages{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:10px;background:#FAF6F0}
+.chat-bubble{max-width:80%;padding:10px 12px;border-radius:12px;font-size:12px;line-height:1.5}
+.chat-bubble.user{align-self:flex-end;background:#E91E63;color:#fff}
+.chat-bubble.bot{align-self:flex-start;background:#fff;color:#4A1A2E;border:1px solid #F5D5E0}
+.chat-input-area{padding:10px;border-top:2px dashed #F5D5E0;display:flex;gap:8px}
+.chat-input{flex:1;padding:8px 12px;border:2px dashed #E8B4C0;border-radius:4px;font-size:12px;font-family:inherit;background:#FAF6F0;color:#4A1A2E}
+.chat-input:focus{outline:none;border-color:#E91E63}
+.chat-send{padding:8px 12px;background:#E91E63;color:#fff;border-radius:4px;font-size:12px;border:none;cursor:pointer}
+.typing-dots{display:flex;gap:4px;padding:8px 12px;background:#fff;border:1px solid #F5D5E0;border-radius:12px;align-self:flex-start}
+.typing-dots span{width:6px;height:6px;background:#E91E63;border-radius:50%;animation:bounce 1s infinite}
+.typing-dots span:nth-child(2){animation-delay:.15s}
+.typing-dots span:nth-child(3){animation-delay:.3s}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+
+.lightbox{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,0.8);display:flex;align-items:center;justify-content:center;padding:16px;cursor:pointer}
+.lightbox img{max-width:100%;max-height:85vh;object-fit:contain;background:#fff;padding:8px;box-shadow:0 10px 40px rgba(0,0,0,0.3)}
+
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.reveal{animation:fadeInUp .6s ease forwards;opacity:0}
+.reveal-delay-1{animation-delay:.1s}
+.reveal-delay-2{animation-delay:.2s}
+.reveal-delay-3{animation-delay:.3s}
+.reveal-delay-4{animation-delay:.4s}
+.reveal-delay-5{animation-delay:.5s}
+
+.tag-pill{font-size:8px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;padding:2px 8px;color:#fff;display:inline-block}
+
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:#D4A5B8;border-radius:3px}
+
+@media(min-width:640px){
+  .sm\:flex{display:flex}
+  .sm\:grid-cols-2{grid-template-columns:repeat(2,1fr)}
+  .sm\:grid-cols-3{grid-template-columns:repeat(3,1fr)}
+  .sm\:flex-row{flex-direction:row}
+  .sm\:w-36{width:144px}
+}
+@media(min-width:768px){
+  .md\:flex{display:flex}
+  .md\:hidden{display:none}
+  .md\:grid-cols-4{grid-template-columns:repeat(4,1fr)}
+}
+.masonry{columns:2;column-gap:8px}
+@media(min-width:640px){.masonry{columns:3}}
+@media(min-width:768px){.masonry{columns:4}}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav id="navbar">
+  <div class="container" style="padding:12px 16px;display:flex;align-items:center;justify-content:space-between">
+    <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">
+      <span id="nav-logo"></span>
+    </a>
+    <div class="md:flex items-center gap-4" style="display:none" id="desktop-nav">
+      <button class="nav-link" onclick="scrollToSection('services')">Services</button>
+      <button class="nav-link" onclick="scrollToSection('portfolio')">Portfolio</button>
+      <button class="nav-link" onclick="scrollToSection('resources')">Resources</button>
+      <button class="nav-link" onclick="scrollToSection('contact')">Contact</button>
+    </div>
+    <button class="md:hidden" style="color:#E91E63;background:none;border:none;font-size:24px" onclick="toggleMenu()">☰</button>
+  </div>
+</nav>
+
+<div id="mobile-menu" class="mobile-menu hide">
+  <button style="position:absolute;top:16px;right:16px;font-size:28px;color:#E91E63;background:none;border:none" onclick="toggleMenu()">✕</button>
+  <button onclick="scrollToSection('services');toggleMenu()" style="color:#E91E63">Services</button>
+  <button onclick="scrollToSection('portfolio');toggleMenu()" style="color:#9C27B0">Portfolio</button>
+  <button onclick="scrollToSection('resources');toggleMenu()" style="color:#FF5722">Resources</button>
+  <button onclick="scrollToSection('contact');toggleMenu()" style="color:#4CAF50">Contact</button>
+</div>
+
+<!-- HERO -->
+<section class="relative" style="padding:32px 16px 48px;overflow:hidden">
+  <svg class="hero-doodle" style="top:48px;left:8%;width:24px;height:24px;transform:rotate(12deg)" viewBox="0 0 24 24" fill="none" stroke="#E91E63" stroke-width="2"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9"/></svg>
+  <svg class="hero-doodle" style="top:80px;right:10%;width:20px;height:20px" viewBox="0 0 24 24" fill="#FF9800"><path d="M12 0L14 10L24 12L14 14L12 24L10 14L0 12L10 10Z"/></svg>
+  <svg class="hero-doodle" style="bottom:64px;left:5%;width:20px;height:20px;opacity:.4" viewBox="0 0 24 24" fill="none" stroke="#E91E63" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+
+  <div class="container text-center relative" style="z-index:10;max-width:640px">
+    <div class="reveal mb-2" id="hero-line1"></div>
+    <div class="reveal reveal-delay-1 mb-2" id="hero-line2"></div>
+    <div class="reveal reveal-delay-2 mb-6" id="hero-line3"></div>
+
+    <div class="reveal reveal-delay-3 flex justify-center gap-3 mb-6 flex-wrap">
+      <div class="polaroid tape hero-polaroid" style="transform:rotate(-3deg)">
+        <img src="https://images.unsplash.com/photo-1596238821829-f9be7f760625?w=300&h=400&fit=crop" alt="Hair style" style="width:100%;aspect-ratio:3/4;object-fit:cover">
+      </div>
+      <div class="polaroid tape hero-polaroid" style="transform:rotate(2deg);margin-top:-16px">
+        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=300&h=400&fit=crop" alt="Modeling" style="width:100%;aspect-ratio:3/4;object-fit:cover">
+      </div>
+      <div class="polaroid tape hero-polaroid" style="transform:rotate(-2deg);margin-top:8px">
+        <img src="https://images.unsplash.com/photo-1605980776566-0486c3ac7617?w=300&h=400&fit=crop" alt="Locs" style="width:100%;aspect-ratio:3/4;object-fit:cover">
+      </div>
+    </div>
+
+    <p class="reveal reveal-delay-4 font-hand" style="font-size:28px;color:#C2187B;margin-bottom:16px">Wear it Royal.</p>
+
+    <div class="reveal reveal-delay-4 inline-block px-4 py-2 paper-pink mb-6" style="transform:rotate(1deg)">
+      <span class="font-hand" style="font-size:16px;color:#8B1546">Birmingham, Alabama</span>
+    </div>
+
+    <div class="reveal reveal-delay-5 flex flex-col sm:flex-row items-center justify-center gap-3">
+      <button onclick="scrollToSection('services')" class="px-8 py-3 text-white text-sm font-black uppercase tracking-widest" style="background:#E91E63;box-shadow:0 4px 12px rgba(233,30,99,0.3)">Book Now</button>
+      <a href="https://cash.app/$Paniece17" target="_blank" class="px-6 py-3 text-sm font-black uppercase tracking-wider" style="color:#E91E63;border:2px dashed #E91E63">$Paniece17</a>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="paper-pink torn-top torn-bottom" style="padding:48px 16px">
+  <div class="container flex flex-col sm:flex-row items-center gap-6" style="max-width:768px">
+    <div class="polaroid tape flex-shrink-0" style="transform:rotate(-3deg)">
+      <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=200&h=200&fit=crop" alt="CapitalPea" style="width:120px;height:120px;object-fit:cover">
+    </div>
+    <div class="paper-cream p-4 relative" style="box-shadow:2px 2px 0 rgba(0,0,0,0.06)">
+      <div style="position:absolute;left:12px;top:0;bottom:0;width:2px;background:#E91E63;opacity:.3"></div>
+      <h3 class="font-hand mb-2" style="font-size:24px;color:#8B1546;margin-left:12px">Our Mission</h3>
+      <div class="mb-3" style="margin-left:12px">
+        <span class="tag-pill" style="background:#E91E63">Education</span>
+        <span class="tag-pill" style="background:#9C27B0">Opportunity</span>
+        <span class="tag-pill" style="background:#FF5722">Empowerment</span>
+      </div>
+      <p style="font-size:13px;color:#5C3A4A;margin-left:12px;line-height:1.6">I build confidence and create opportunities. Every client who sits in my chair or walks through my door gets elevated.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" style="padding:48px 16px;background:#FAF6F0">
+  <div class="container" style="max-width:900px">
+    <div class="paper-cream mx-auto mb-6 relative" style="max-width:500px;padding:20px 24px;box-shadow:2px 2px 0 rgba(0,0,0,0.06)">
+      <div style="position:absolute;left:16px;top:0;bottom:0;width:2px;background:#FFB6C1"></div>
+      <div class="text-center" style="margin-left:12px">
+        <div class="mb-1" id="services-ransom"></div>
+        <h2 class="font-hand" style="font-size:28px;color:#8B1546">Services</h2>
+      </div>
+    </div>
+
+    <div class="flex justify-center gap-2 mb-6 flex-wrap" id="service-tabs">
+      <button class="cat-pill active" data-cat="all" onclick="filterServices('all')">&#10022; All</button>
+      <button class="cat-pill inactive" data-cat="hair" onclick="filterServices('hair')">&#9986; Hair</button>
+      <button class="cat-pill inactive" data-cat="modeling" onclick="filterServices('modeling')">&#128247; Model</button>
+      <button class="cat-pill inactive" data-cat="coaching" onclick="filterServices('coaching')">&#10024; Coach</button>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3" id="service-grid"></div>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mt-8">
+      <button onclick="showQueueModal()" class="px-6 py-3 text-white text-xs font-black uppercase tracking-widest" style="background:#E91E63">Get on the List!</button>
+    </div>
+  </div>
+</section>
+<!-- PORTFOLIO -->
+<section id="portfolio" style="padding:48px 16px;background:#FAF6F0">
+  <div class="container" style="max-width:900px">
+    <div class="text-center mb-6">
+      <div class="mb-2" id="portfolio-ransom"></div>
+      <h2 class="font-hand" style="font-size:28px;color:#8B1546">Portfolio</h2>
+    </div>
+    <div class="masonry" id="portfolio-grid"></div>
+  </div>
+</section>
+
+<!-- RESOURCES -->
+<section id="resources" style="padding:48px 16px;background:#FFF0F3">
+  <div class="container" style="max-width:900px">
+    <div class="text-center mb-6">
+      <div class="mb-2" id="resources-ransom"></div>
+      <h2 class="font-hand" style="font-size:28px;color:#8B1546">Resources & Help</h2>
+      <p style="font-size:12px;color:#5C3A4A;margin-top:4px">You are not alone. Birmingham & surrounding areas.</p>
+    </div>
+
+    <div class="crisis-box mb-6">
+      <p style="font-size:12px;font-weight:700;color:#8B1546;text-align:center">
+        In danger? Call <a href="tel:911" style="color:#F44336;text-decoration:underline">911</a> or DV Hotline <a href="tel:1-800-799-7233" style="color:#F44336;text-decoration:underline">1-800-799-7233</a>
+      </p>
+    </div>
+
+    <div class="flex justify-center gap-2 mb-6 flex-wrap" id="resource-tabs">
+      <button class="cat-pill active" data-cat="all" onclick="filterResources('all')">All</button>
+      <button class="cat-pill inactive" data-cat="domestic_violence" onclick="filterResources('domestic_violence')">DV Help</button>
+      <button class="cat-pill inactive" data-cat="drug_abuse" onclick="filterResources('drug_abuse')">Recovery</button>
+      <button class="cat-pill inactive" data-cat="homelessness" onclick="filterResources('homelessness')">Shelter</button>
+      <button class="cat-pill inactive" data-cat="mental_health" onclick="filterResources('mental_health')">Mental</button>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="resource-grid"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="padding:48px 16px;background:#FAF6F0">
+  <div class="container" style="max-width:500px">
+    <div class="text-center mb-6">
+      <h2 class="font-hand" style="font-size:28px;color:#8B1546">Let's Connect!</h2>
+    </div>
+
+    <div class="flex justify-center gap-4 mb-6">
+      <div class="paper-pink px-4 py-3" style="transform:rotate(-2deg)">
+        <p style="font-size:16px;text-align:center">&#128205;</p>
+        <p style="font-size:10px;font-weight:700;color:#5C3A4A;text-align:center">Birmingham, AL</p>
+      </div>
+      <a href="https://cash.app/$Paniece17" target="_blank" class="paper-mint px-4 py-3" style="transform:rotate(1deg);display:block">
+        <p style="font-size:16px;text-align:center">&#128184;</p>
+        <p style="font-size:10px;font-weight:700;color:#5C3A4A;text-align:center">$Paniece17</p>
+      </a>
+    </div>
+
+    <form id="contact-form" onsubmit="submitContact(event)">
+      <div class="flex gap-3 mb-3">
+        <div class="input-wrap flex-1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <input type="text" required placeholder="Name" class="scrap-input">
+        </div>
+        <div class="input-wrap flex-1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <input type="email" required placeholder="Email" class="scrap-input">
+        </div>
+      </div>
+      <div class="input-wrap mb-3">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="top:14px"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        <textarea required rows="4" placeholder="What's up?" class="scrap-input"></textarea>
+      </div>
+      <button type="submit" class="w-full py-3 text-white text-sm font-black uppercase tracking-widest" style="background:#E91E63;display:flex;align-items:center;justify-content:center;gap:8px">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        Send It!
+      </button>
+      <p id="contact-success" class="hide text-center font-hand mt-3" style="font-size:20px;color:#4CAF50">&#10003; Message Sent!</p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-10 px-4">
+  <div class="container" style="max-width:900px">
+    <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+      <div id="footer-logo"></div>
+      <div class="flex gap-4 flex-wrap">
+        <a href="#services" onclick="scrollToSection('services');return false" style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.7)">Services</a>
+        <a href="#portfolio" onclick="scrollToSection('portfolio');return false" style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.7)">Portfolio</a>
+        <a href="#resources" onclick="scrollToSection('resources');return false" style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.7)">Resources</a>
+      </div>
+    </div>
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-2 pt-4" style="border-top:1px dashed rgba(255,255,255,0.15)">
+      <p style="font-size:10px;color:rgba(255,255,255,0.4)">Made with &#9829; by CapitalPea &copy; <span id="year"></span></p>
+      <p style="font-size:9px;color:rgba(255,255,255,0.2)">AASOTU Media Group LLC</p>
+    </div>
+  </div>
+</footer>
+
+<!-- CHAT -->
+<button class="chat-btn" id="chat-btn" onclick="toggleChat()">&#128172;</button>
+<div class="chat-panel hide" id="chat-panel">
+  <div class="chat-header">
+    <div class="flex items-center gap-2">
+      <span style="font-size:16px">&#129302;</span>
+      <span style="font-size:12px;font-weight:700;color:#8B1546">CapitalPea</span>
+    </div>
+    <button onclick="toggleChat()" style="background:none;border:none;color:#8A6A7A;font-size:18px">&#10005;</button>
+  </div>
+  <div class="chat-messages" id="chat-messages">
+    <div class="chat-bubble bot">Hey girl! Ask me about hair, modeling, or coaching!</div>
+  </div>
+  <div class="chat-input-area">
+    <input type="text" id="chat-input" class="chat-input" placeholder="Ask me anything..." onkeydown="if(event.key==='Enter')sendChat()">
+    <button class="chat-send" id="chat-send" onclick="sendChat()">Send</button>
+  </div>
+</div>
+
+<!-- BOOKING MODAL -->
+<div id="booking-modal" class="modal-overlay hide" onclick="closeBookingModal(event)">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <div><h3 class="font-hand" style="font-size:20px;color:#8B1546">Book Appointment</h3><p style="font-size:12px;font-weight:700;color:#E91E63" id="booking-service-name"></p></div>
+      <button onclick="hideBookingModal()" style="background:none;border:none;color:#8A6A7A;font-size:20px">&#10005;</button>
+    </div>
+    <div id="booking-form-content" class="p-4">
+      <form onsubmit="submitBooking(event)">
+        <div class="grid grid-cols-2 gap-2 mb-3">
+          <input type="date" required class="scrap-input" style="padding-left:10px" id="book-date">
+          <input type="time" required class="scrap-input" style="padding-left:10px" id="book-time">
+        </div>
+        <div class="mb-3"><input type="text" required placeholder="Your Name" class="scrap-input" style="padding-left:10px" id="book-name"></div>
+        <div class="mb-3"><input type="email" required placeholder="Email" class="scrap-input" style="padding-left:10px" id="book-email"></div>
+        <div class="mb-3"><input type="tel" placeholder="Phone" class="scrap-input" style="padding-left:10px" id="book-phone"></div>
+        <div class="mb-3"><textarea rows="3" placeholder="Notes" class="scrap-input" style="padding-left:10px" id="book-notes"></textarea></div>
+        <button type="submit" class="w-full py-3 text-white text-xs font-black uppercase tracking-widest" style="background:#E91E63">Request Booking</button>
+      </form>
+    </div>
+    <div id="booking-success" class="hide p-6 text-center">
+      <p style="font-size:40px;margin-bottom:8px">&#9989;</p>
+      <p class="font-hand" style="font-size:20px;color:#8B1546">Booked!</p>
+      <p style="font-size:12px;color:#5C3A4A;margin-bottom:16px">We'll confirm your appointment soon.</p>
+      <a href="https://cash.app/$Paniece17" target="_blank" class="inline-block px-6 py-2 text-xs font-black uppercase tracking-wider text-white" style="background:#00C853">Pay Deposit</a>
+    </div>
+  </div>
+</div>
+
+<!-- QUEUE MODAL -->
+<div id="queue-modal" class="modal-overlay hide" onclick="closeQueueModal(event)">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <div><h3 class="font-hand" style="font-size:20px;color:#8B1546">Get on the List</h3><p style="font-size:12px;color:#5C3A4A">Tell us what you need</p></div>
+      <button onclick="hideQueueModal()" style="background:none;border:none;color:#8A6A7A;font-size:20px">&#10005;</button>
+    </div>
+    <div id="queue-form-content" class="p-4">
+      <form onsubmit="submitQueue(event)">
+        <div class="grid grid-cols-3 gap-2 mb-3">
+          <button type="button" class="cat-pill active" data-st="hair" onclick="setQueueServiceType('hair')">&#9986; Hair</button>
+          <button type="button" class="cat-pill inactive" data-st="modeling" onclick="setQueueServiceType('modeling')">&#128247; Model</button>
+          <button type="button" class="cat-pill inactive" data-st="coaching" onclick="setQueueServiceType('coaching')">&#10024; Coach</button>
+        </div>
+        <div class="mb-3">
+          <select class="scrap-input" id="queue-budget" style="padding-left:10px">
+            <option value="under50">Under $50</option>
+            <option value="50to100">$50 - $100</option>
+            <option value="100to200">$100 - $200</option>
+            <option value="200plus">$200+</option>
+            <option value="consultation" selected>Not sure</option>
+          </select>
+        </div>
+        <div class="grid grid-cols-2 gap-2 mb-3">
+          <input type="text" required placeholder="Name" class="scrap-input" style="padding-left:10px" id="queue-name">
+          <input type="email" required placeholder="Email" class="scrap-input" style="padding-left:10px" id="queue-email">
+        </div>
+        <div class="mb-3"><input type="tel" placeholder="Phone" class="scrap-input" style="padding-left:10px" id="queue-phone"></div>
+        <div class="mb-3"><textarea rows="3" placeholder="What are you looking for?" class="scrap-input" style="padding-left:10px" id="queue-desc"></textarea></div>
+        <div class="flex gap-2 mb-3">
+          <button type="button" class="cat-pill inactive flex-1" data-urg="low" onclick="setQueueUrgency('low')">Low</button>
+          <button type="button" class="cat-pill active flex-1" data-urg="medium" onclick="setQueueUrgency('medium')">Medium</button>
+          <button type="button" class="cat-pill inactive flex-1" data-urg="high" onclick="setQueueUrgency('high')">High</button>
+        </div>
+        <button type="submit" class="w-full py-3 text-white text-xs font-black uppercase tracking-widest" style="background:#E91E63">Submit</button>
+      </form>
+    </div>
+    <div id="queue-success" class="hide p-6 text-center">
+      <p style="font-size:40px;margin-bottom:8px">&#9989;</p>
+      <p class="font-hand" style="font-size:20px;color:#8B1546">You're on the list!</p>
+      <p style="font-size:12px;color:#5C3A4A;margin-bottom:16px">We'll reach out soon.</p>
+      <button onclick="hideQueueModal()" class="px-6 py-2 text-xs font-black uppercase tracking-wider text-white" style="background:#E91E63">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox hide" onclick="hideLightbox()">
+  <button style="position:absolute;top:16px;right:16px;color:#fff;font-size:32px;background:none;border:none">&#10005;</button>
+  <img src="" alt="" id="lightbox-img" onclick="event.stopPropagation()">
+</div>
+<script>
+const RANSOM_COLORS = ["#E91E63","#9C27B0","#FF5722","#4CAF50","#2196F3","#FF9800","#F44336","#673AB7"];
+function ransomText(text,big){
+  return text.split('').map((ch,i)=>{
+    if(ch===' ')return'<span style="width:4px;display:inline-block"></span>';
+    const rot=(Math.random()*6-3).toFixed(1);
+    const cls=big?'ransom-letter ransom-big':'ransom-letter';
+    return`<span class="${cls}" style="background:${RANSOM_COLORS[i%RANSOM_COLORS.length]};transform:rotate(${rot}deg)">${ch}</span>`;
+  }).join('');
+}
+
+document.getElementById('hero-line1').innerHTML=ransomText('YOUR',true);
+document.getElementById('hero-line2').innerHTML=ransomText('HAIR IS',true);
+document.getElementById('hero-line3').innerHTML=ransomText('YOUR CROWN',true);
+document.getElementById('nav-logo').innerHTML=ransomText('CAPITALPEA',false);
+document.getElementById('services-ransom').innerHTML=ransomText('WHAT WE DO',false);
+document.getElementById('portfolio-ransom').innerHTML=ransomText('THE COLLECTIVE',false);
+document.getElementById('resources-ransom').innerHTML=ransomText('COMMUNITY',false);
+document.getElementById('footer-logo').innerHTML=ransomText('CAPITALPEA',false);
+document.getElementById('year').textContent=new Date().getFullYear();
+
+function scrollToSection(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth'});}
+function toggleMenu(){document.getElementById('mobile-menu').classList.toggle('hide');}
+window.addEventListener('scroll',()=>{
+  const nav=document.getElementById('navbar');
+  if(window.scrollY>60)nav.classList.add('nav-fixed');else nav.classList.remove('nav-fixed');
+});
+
+const ALL_SERVICES=[
+  {id:1,name:"Box Braids",category:"hair",price:"150",duration:240,img:"https://images.unsplash.com/photo-1596238821829-f9be7f760625?w=400&h=300&fit=crop"},
+  {id:2,name:"Locs Install",category:"hair",price:"200",duration:300,img:"https://images.unsplash.com/photo-1605980776566-0486c3ac7617?w=400&h=300&fit=crop"},
+  {id:3,name:"Locs Retwist",category:"hair",price:"85",duration:120,img:"https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&h=300&fit=crop"},
+  {id:4,name:"Two-Strand Twists",category:"hair",price:"100",duration:180,img:"https://images.unsplash.com/photo-1500917293048-f464e76b4199?w=400&h=300&fit=crop"},
+  {id:5,name:"Goddess Braids",category:"hair",price:"120",duration:180,img:"https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&h=300&fit=crop"},
+  {id:6,name:"Hair Consult",category:"hair",price:"50",duration:60,img:"https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=400&h=300&fit=crop"},
+  {id:7,name:"Portfolio Shoot",category:"modeling",price:"300",duration:180,img:"https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=300&fit=crop"},
+  {id:8,name:"Runway Coaching",category:"modeling",price:"150",duration:120,img:"https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&h=300&fit=crop"},
+  {id:9,name:"Talent Assessment",category:"modeling",price:"75",duration:90,img:"https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=400&h=300&fit=crop"},
+  {id:10,name:"Life Coaching",category:"coaching",price:"100",duration:60,img:"https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=300&fit=crop"},
+  {id:11,name:"Career Coaching",category:"coaching",price:"125",duration:90,img:"https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&h=300&fit=crop"},
+  {id:12,name:"Empowerment Session",category:"coaching",price:"100",duration:60,img:"https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop"},
+];
+
+let currentServiceCat='all';
+function filterServices(cat){
+  currentServiceCat=cat;
+  document.querySelectorAll('#service-tabs .cat-pill').forEach(btn=>{
+    if(btn.dataset.cat===cat){btn.classList.add('active');btn.classList.remove('inactive');}
+    else{btn.classList.remove('active');btn.classList.add('inactive');}
+  });
+  renderServices();
+}
+function renderServices(){
+  const grid=document.getElementById('service-grid');
+  const filtered=currentServiceCat==='all'?ALL_SERVICES:ALL_SERVICES.filter(s=>s.category===currentServiceCat);
+  grid.innerHTML=filtered.map(s=>`
+    <div class="service-card" onclick="openBookingModal(${s.id})">
+      <img src="${s.img}" alt="${s.name}" class="service-img">
+      <div style="margin-top:6px;display:flex;align-items:center;justify-content:space-between">
+        <span class="font-hand" style="font-size:14px;color:#8B1546">${s.name}</span>
+        <span style="font-size:11px;font-weight:800;color:#E91E63">$${s.price}</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:4px;margin-top:2px">
+        <span class="tag-pill" style="background:#E91E63">${s.category}</span>
+        <span style="font-size:9px;color:#8A6A7A">${s.duration}m</span>
+      </div>
+    </div>
+  `).join('');
+}
+renderServices();
+
+const PORTFOLIO=[
+  {id:1,img:"https://images.unsplash.com/photo-1596238821829-f9be7f760625?w=400&h=500&fit=crop",title:"Royal Crown",cat:"hair"},
+  {id:2,img:"https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=300&fit=crop",title:"Urban Elegance",cat:"modeling"},
+  {id:3,img:"https://images.unsplash.com/photo-1605980776566-0486c3ac7617?w=400&h=400&fit=crop",title:"Golden Locs",cat:"hair"},
+  {id:4,img:"https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=400&h=500&fit=crop",title:"Bold Expression",cat:"modeling"},
+  {id:5,img:"https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=400&h=300&fit=crop",title:"Natural Beauty",cat:"hair"},
+  {id:6,img:"https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&h=400&fit=crop",title:"Locs Portrait",cat:"hair"},
+  {id:7,img:"https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop",title:"Empowerment",cat:"lifestyle"},
+  {id:8,img:"https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&h=500&fit=crop",title:"Goddess Style",cat:"hair"},
+  {id:9,img:"https://images.unsplash.com/photo-1500917293048-f464e76b4199?w=400&h=400&fit=crop",title:"Precision Twists",cat:"hair"},
+  {id:10,img:"https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&h=300&fit=crop",title:"Motion",cat:"modeling"},
+  {id:11,img:"https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=400&fit=crop",title:"Coaching",cat:"lifestyle"},
+  {id:12,img:"https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&h=500&fit=crop",title:"Career",cat:"lifestyle"},
+];
+const CAT_COLORS={hair:'#E91E63',modeling:'#9C27B0',lifestyle:'#FF5722'};
+function renderPortfolio(){
+  const grid=document.getElementById('portfolio-grid');
+  grid.innerHTML=PORTFOLIO.map((item,i)=>{
+    const rot=i%3===0?-2:i%3===1?1:2;
+    return`
+      <div class="port-card" style="transform:rotate(${rot}deg)" onclick="showLightbox('${item.img}')">
+        <img src="${item.img}" alt="${item.title}" loading="lazy">
+        <div style="margin-top:6px;padding:0 2px;display:flex;align-items:center;justify-content:space-between">
+          <span class="tag-pill" style="background:${CAT_COLORS[item.cat]}">${item.cat}</span>
+          <span class="font-hand" style="font-size:10px;color:#8B1546">${item.title}</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+renderPortfolio();
+function showLightbox(src){document.getElementById('lightbox-img').src=src;document.getElementById('lightbox').classList.remove('hide');document.body.style.overflow='hidden';}
+function hideLightbox(){document.getElementById('lightbox').classList.add('hide');document.body.style.overflow='';}
+
+const ALL_RESOURCES=[
+  {id:1,name:"One Place Metro Alabama",cat:"domestic_violence",phone:"(205) 977-5000",address:"2200 7th Ave S, Birmingham, AL",desc:"Comprehensive services for DV survivors including counseling, legal advocacy, and safety planning.",web:"https://oneplacebirmingham.org"},
+  {id:2,name:"National DV Hotline",cat:"domestic_violence",phone:"1-800-799-7233",desc:"24/7 confidential support for anyone experiencing domestic violence.",web:"https://www.thehotline.org"},
+  {id:3,name:"Aletheia House",cat:"drug_abuse",phone:"(205) 324-6502",address:"2012 5th Ave N, Birmingham, AL",desc:"Substance abuse treatment, prevention, and housing services.",web:"https://www.aletheiahouse.org"},
+  {id:4,name:"SAMHSA Helpline",cat:"drug_abuse",phone:"1-800-662-4357",desc:"National helpline for substance abuse and mental health. Free, confidential, 24/7.",web:"https://www.samhsa.gov/find-help"},
+  {id:5,name:"Birmingham Outreach Center",cat:"homelessness",phone:"(205) 252-9576",address:"6269 2nd Ave S, Birmingham, AL",desc:"Day shelter providing meals, showers, laundry, case management.",web:"https://www.firehouseshelter.org"},
+  {id:6,name:"Jimmie Hale Mission",cat:"homelessness",phone:"(205) 323-5877",address:"3420 2nd Ave N, Birmingham, AL",desc:"Emergency shelter, transitional housing, and comprehensive support.",web:"https://www.jimmiehalemission.com"},
+  {id:7,name:"Crisis Center Birmingham",cat:"mental_health",phone:"(205) 323-7777",desc:"24/7 crisis counseling, suicide prevention, and mental health support.",web:"https://www.crisiscenterbham.org"},
+  {id:8,name:"YWCA Central Alabama",cat:"domestic_violence",phone:"(205) 322-9922",address:"309 23rd St N, Birmingham, AL",desc:"DV shelter, counseling, and support services for women and children.",web:"https://www.ywca-bham.org"},
+  {id:9,name:"United Way 211",cat:"mental_health",phone:"211",desc:"Connects individuals with essential services: housing, food, utility assistance.",web:"https://www.uwca.org"},
+  {id:10,name:"AA Central Office AL",cat:"drug_abuse",phone:"(205) 324-4925",desc:"Alcoholics Anonymous meetings and resources throughout Alabama.",web:"https://www.aacentraloffice.org"},
+];
+const RES_COLORS={all:'#E91E63',domestic_violence:'#F44336',drug_abuse:'#FF9800',homelessness:'#2196F3',mental_health:'#9C27B0'};
+let currentResCat='all';
+function filterResources(cat){
+  currentResCat=cat;
+  document.querySelectorAll('#resource-tabs .cat-pill').forEach(btn=>{
+    if(btn.dataset.cat===cat){btn.classList.add('active');btn.classList.remove('inactive');}
+    else{btn.classList.remove('active');btn.classList.add('inactive');}
+  });
+  renderResources();
+}
+function renderResources(){
+  const grid=document.getElementById('resource-grid');
+  const filtered=currentResCat==='all'?ALL_RESOURCES:ALL_RESOURCES.filter(r=>r.cat===currentResCat);
+  grid.innerHTML=filtered.map(r=>`
+    <div class="res-card">
+      <span class="tag-pill mb-2" style="background:${RES_COLORS[r.cat]}">${r.cat.replace('_',' ')}</span>
+      <h4 style="font-size:14px;font-weight:700;color:#4A1A2E;margin:4px 0">${r.name}</h4>
+      ${r.desc?`<p style="font-size:11px;color:#5C3A4A;margin-bottom:8px;line-height:1.5">${r.desc}</p>`:''}
+      <div style="display:flex;flex-direction:column;gap:4px">
+        ${r.phone?`<a href="tel:${r.phone}" style="font-size:11px;color:#5C3A4A;display:flex;align-items:center;gap:4px">&#128222; ${r.phone}</a>`:''}
+        ${r.address?`<p style="font-size:11px;color:#8A6A7A;display:flex;align-items:center;gap:4px">&#128205; ${r.address}</p>`:''}
+        ${r.web?`<a href="${r.web}" target="_blank" style="font-size:11px;font-weight:700;color:#E91E63;display:inline-flex;align-items:center;gap:4px;margin-top:4px">&#127760; Visit Website &#8594;</a>`:''}
+      </div>
+    </div>
+  `).join('');
+}
+renderResources();
+
+let selectedServiceId=null;
+function openBookingModal(serviceId){
+  selectedServiceId=serviceId;
+  const svc=ALL_SERVICES.find(s=>s.id===serviceId);
+  document.getElementById('booking-service-name').textContent=svc?svc.name:'';
+  document.getElementById('booking-form-content').classList.remove('hide');
+  document.getElementById('booking-success').classList.add('hide');
+  document.getElementById('booking-modal').classList.remove('hide');
+  document.body.style.overflow='hidden';
+}
+function hideBookingModal(){document.getElementById('booking-modal').classList.add('hide');document.body.style.overflow='';}
+function closeBookingModal(e){if(e.target===e.currentTarget)hideBookingModal();}
+function submitBooking(e){e.preventDefault();document.getElementById('booking-form-content').classList.add('hide');document.getElementById('booking-success').classList.remove('hide');}
+
+let queueServiceType='hair';
+let queueUrgency='medium';
+function showQueueModal(){
+  document.getElementById('queue-form-content').classList.remove('hide');
+  document.getElementById('queue-success').classList.add('hide');
+  document.getElementById('queue-modal').classList.remove('hide');
+  document.body.style.overflow='hidden';
+}
+function hideQueueModal(){document.getElementById('queue-modal').classList.add('hide');document.body.style.overflow='';}
+function closeQueueModal(e){if(e.target===e.currentTarget)hideQueueModal();}
+function setQueueServiceType(type){
+  queueServiceType=type;
+  document.querySelectorAll('[data-st]').forEach(btn=>{
+    if(btn.dataset.st===type){btn.classList.add('active');btn.classList.remove('inactive');}
+    else{btn.classList.remove('active');btn.classList.add('inactive');}
+  });
+}
+function setQueueUrgency(urg){
+  queueUrgency=urg;
+  document.querySelectorAll('[data-urg]').forEach(btn=>{
+    if(btn.dataset.urg===urg){btn.classList.add('active');btn.classList.remove('inactive');}
+    else{btn.classList.remove('active');btn.classList.add('inactive');}
+  });
+}
+function submitQueue(e){e.preventDefault();document.getElementById('queue-form-content').classList.add('hide');document.getElementById('queue-success').classList.remove('hide');}
+
+function submitContact(e){e.preventDefault();document.getElementById('contact-form').classList.add('hide');document.getElementById('contact-success').classList.remove('hide');}
+
+function toggleChat(){
+  document.getElementById('chat-panel').classList.toggle('hide');
+  document.getElementById('chat-btn').classList.toggle('hide');
+}
+const CHAT_KNOWLEDGE=[
+  {q:['braid','braids','box braid'],a:'Box Braids are $150 and take about 4 hours. Classic protective style with clean parting. Want to book? Click a service card!'},
+  {q:['loc','locs','dreadlock','dreadlocks'],a:'We do Locs Installation ($200, ~5 hours) and Locs Retwist ($85, ~2 hours). Expert care for healthy, beautiful locs!'},
+  {q:['twist','twists'],a:'Two-Strand Twists are $100 for about 3 hours. Beautiful, defined twists that can be styled so many ways!'},
+  {q:['goddess','goddess braid'],a:'Goddess Braids are $120 for about 3 hours. Large, cornrow-style braids — bold and regal!'},
+  {q:['consult','consultation'],a:'Natural Hair Consultation is $50 for 1 hour. We assess your hair type and build a personalized care routine.'},
+  {q:['model','modeling','portfolio'],a:'Portfolio Photo Sessions are $300 (3hrs). Runway Coaching is $150 (2hrs). Talent Assessment is $75. Let\'s build your portfolio!'},
+  {q:['coach','coaching','life coach','career'],a:'Life Coaching $100/hr, Career Coaching $125/90min, Empowerment Sessions $100/hr. Building your confidence and future!'},
+  {q:['price','cost','how much'],a:'Hair: $50-$200. Modeling: $75-$300. Coaching: $100-$125. CashApp: $Paniece17'},
+  {q:['pay','payment','cashapp','deposit'],a:'All payments through CashApp: $Paniece17. Pay before or after your appointment!'},
+  {q:['book','appointment','schedule'],a:'Tap any service card to book! Or click "Get on the List" and we\'ll reach out.'},
+  {q:['where','location','address','birmingham'],a:'We are based in Birmingham, Alabama! Exact address provided when your appointment is confirmed.'},
+  {q:['dv','domestic','abuse','violence','hotline'],a:'If you\'re in danger, call 911. National DV Hotline: 1-800-799-7233 (24/7). One Place Birmingham: (205) 977-5000. You are not alone.'},
+  {q:['drug','addiction','recovery','rehab','substance'],a:'SAMHSA: 1-800-662-4357 (24/7). Aletheia House: (205) 324-6502. AA Central Office: (205) 324-4925. Help is available.'},
+  {q:['homeless','shelter','housing'],a:'Birmingham Outreach: (205) 252-9576. Jimmie Hale Mission: (205) 323-5877. United Way: Dial 211. People want to help.'},
+  {q:['crisis','mental','suicide','depression','help'],a:'Crisis Center Birmingham: (205) 323-7777 (24/7). Emergency? Call 911. You matter. Help is available right now.'},
+  {q:['hour','hours','open'],a:'By appointment! Use the booking form or "Get on the List" and we\'ll find a time that works.'},
+  {q:['hello','hi','hey','what up'],a:'Hey girl! Welcome to CapitalPea. I can help with hair services, modeling bookings, coaching info, or community resources. What do you need?'},
+];
+function findAnswer(input){
+  const q=input.toLowerCase();
+  for(const item of CHAT_KNOWLEDGE){if(item.q.some(kw=>q.includes(kw)))return item.a;}
+  return "I can help with hair services (braids, locs, twists), modeling bookings, life/career coaching, or community resources in Birmingham. What would you like to know?";
+}
+function sendChat(){
+  const input=document.getElementById('chat-input');
+  const msg=input.value.trim();
+  if(!msg)return;
+  const msgs=document.getElementById('chat-messages');
+  msgs.innerHTML+=`<div class="chat-bubble user">${msg}</div>`;
+  input.value='';
+  msgs.innerHTML+=`<div class="typing-dots" id="typing"><span></span><span></span><span></span></div>`;
+  msgs.scrollTop=msgs.scrollHeight;
+  setTimeout(()=>{
+    document.getElementById('typing')?.remove();
+    msgs.innerHTML+=`<div class="chat-bubble bot">${findAnswer(msg)}</div>`;
+    msgs.scrollTop=msgs.scrollHeight;
+  },800);
+}
+
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{if(entry.isIntersecting){entry.target.style.animationPlayState='running';observer.unobserve(entry.target);}});
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>{el.style.animationPlayState='paused';observer.observe(el);});
+</script>
+</body>
+</html>
