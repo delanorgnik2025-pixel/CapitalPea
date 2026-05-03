@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>CapitalPea | Model · Hair · Empire</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Tenor+Sans&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{--hot-pink:#E8257A;--rose-gold:#C9926A;--blush:#F2C4CE;--champagne:#F5E6D3;--deep-plum:#1A0A12;--dark:#0D0608;--white:#FAF6F7;--gold:#C9A84C;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--dark);color:var(--white);font-family:'DM Sans',sans-serif;overflow-x:hidden;}
+.rose-bg{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
+.petal{position:absolute;opacity:0;font-size:1rem;animation:floatUp linear infinite;user-select:none;}
+@keyframes floatUp{0%{transform:translateY(110vh) rotate(0deg);opacity:0;}10%{opacity:.2;}90%{opacity:.1;}100%{transform:translateY(-10vh) rotate(540deg);opacity:0;}}
+nav{position:fixed;top:0;width:100%;z-index:1000;padding:1.1rem 1.4rem;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(180deg,rgba(13,6,8,.97) 0%,transparent 100%);}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:300;letter-spacing:.18em;color:var(--white);text-decoration:none;}
+.nav-logo span{color:var(--hot-pink);}
+.hamburger{background:none;border:none;cursor:pointer;display:flex;flex-direction:column;gap:5px;padding:4px;}
+.hamburger span{display:block;width:24px;height:1.5px;background:var(--white);transition:all .3s ease;transform-origin:center;}
+.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+.menu-overlay{position:fixed;inset:0;background:rgba(13,6,8,.97);z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2.2rem;transform:translateX(100%);transition:transform .45s cubic-bezier(.77,0,.175,1);}
+.menu-overlay.open{transform:translateX(0);}
+.menu-overlay a{font-family:'Cormorant Garamond',serif;font-size:2.3rem;font-weight:300;color:var(--white);text-decoration:none;letter-spacing:.08em;transition:color .2s;position:relative;}
+.menu-overlay a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--hot-pink);transition:width .3s ease;}
+.menu-overlay a:hover{color:var(--hot-pink);}
+.menu-overlay a:hover::after{width:100%;}
+.menu-close-hint{font-size:.6rem;letter-spacing:.3em;color:rgba(255,255,255,.25);text-transform:uppercase;margin-top:1rem;}
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:7rem 1.5rem 5rem;z-index:1;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 55%,rgba(232,37,122,.13) 0%,transparent 70%);pointer-events:none;}
+.hero-eyebrow{font-family:'Tenor Sans',sans-serif;font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;color:var(--rose-gold);margin-bottom:1.2rem;opacity:0;animation:fadeUp .8s .2s forwards;}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3.8rem,15vw,9rem);font-weight:300;line-height:.9;color:var(--white);opacity:0;animation:fadeUp .9s .4s forwards;}
+.hero-title em{font-style:italic;color:var(--hot-pink);}
+.hero-sub{font-family:'Tenor Sans',sans-serif;font-size:.72rem;letter-spacing:.25em;color:var(--blush);margin-top:1.6rem;opacity:0;animation:fadeUp .9s .6s forwards;text-transform:uppercase;}
+.hero-divider{width:55px;height:1px;background:linear-gradient(90deg,transparent,var(--hot-pink),transparent);margin:1.8rem auto;opacity:0;animation:fadeUp .9s .8s forwards;}
+.hero-btns{display:flex;flex-direction:column;gap:.9rem;align-items:center;opacity:0;animation:fadeUp .9s 1s forwards;}
+.btn-p{display:inline-block;padding:.9rem 2.2rem;background:var(--hot-pink);color:var(--white);font-family:'Tenor Sans',sans-serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .3s,transform .2s;border:none;}
+.btn-p:hover{background:#c01d68;transform:translateY(-2px);}
+.btn-o{display:inline-block;padding:.9rem 2.2rem;border:1px solid rgba(242,196,206,.35);color:var(--blush);font-family:'Tenor Sans',sans-serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;text-decoration:none;transition:border-color .3s,color .3s;}
+.btn-o:hover{border-color:var(--hot-pink);color:var(--hot-pink);}
+.scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.4rem;opacity:0;animation:fadeUp 1s 1.5s forwards;}
+.scroll-hint span{font-size:.52rem;letter-spacing:.3em;color:rgba(255,255,255,.25);text-transform:uppercase;}
+.scroll-line{width:1px;height:38px;background:linear-gradient(180deg,var(--hot-pink),transparent);animation:pulse 1.8s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:.3;}50%{opacity:1;}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+.split{display:grid;grid-template-columns:1fr;z-index:1;position:relative;}
+.split-panel{position:relative;height:420px;display:flex;align-items:flex-end;padding:2rem 1.5rem;overflow:hidden;}
+.split-panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .6s ease;}
+.split-panel:hover img{transform:scale(1.04);}
+.split-overlay{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(13,6,8,.1) 30%,rgba(13,6,8,.88) 100%);}
+.split-content{position:relative;z-index:2;}
+.split-tag{display:inline-block;padding:.22rem .75rem;border:1px solid rgba(232,37,122,.5);font-family:'Tenor Sans',sans-serif;font-size:.52rem;letter-spacing:.35em;text-transform:uppercase;color:var(--hot-pink);margin-bottom:.7rem;}
+.split-content h2{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--white);line-height:1;margin-bottom:.45rem;}
+.split-content p{font-size:.78rem;color:rgba(255,255,255,.55);margin-bottom:1.1rem;line-height:1.65;max-width:300px;}
+.portfolio{padding:5rem 1.2rem;background:var(--deep-plum);z-index:1;position:relative;}
+.section-header{text-align:center;margin-bottom:2.8rem;}
+.section-label{font-family:'Tenor Sans',sans-serif;font-size:.6rem;letter-spacing:.4em;text-transform:uppercase;color:var(--rose-gold);margin-bottom:.7rem;display:block;}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,8vw,3.5rem);font-weight:300;color:var(--white);}
+.section-title em{font-style:italic;color:var(--hot-pink);}
+.section-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.95rem;color:rgba(255,255,255,.4);margin-top:.6rem;}
+.port-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;max-width:500px;margin:0 auto;}
+.port-grid .span2{grid-column:1/-1;}
+.frame{position:relative;overflow:hidden;}
+.frame::before{content:'';position:absolute;inset:5px;border:1px solid rgba(201,162,76,.38);z-index:2;pointer-events:none;transition:border-color .3s;}
+.frame::after{content:'';position:absolute;inset:9px;border:1px solid rgba(201,162,76,.15);z-index:2;pointer-events:none;}
+.frame:hover::before{border-color:rgba(232,37,122,.55);}
+.frame .c{position:absolute;width:14px;height:14px;z-index:3;pointer-events:none;}
+.frame .c::before,.frame .c::after{content:'';position:absolute;background:var(--gold);}
+.frame .c::before{width:100%;height:1px;top:0;left:0;}
+.frame .c::after{width:1px;height:100%;top:0;left:0;}
+.frame .tl{top:3px;left:3px;}
+.frame .tr{top:3px;right:3px;transform:rotate(90deg);}
+.frame .bl{bottom:3px;left:3px;transform:rotate(-90deg);}
+.frame .br{bottom:3px;right:3px;transform:rotate(180deg);}
+.frame img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top center;display:block;transition:transform .5s ease,filter .3s;filter:contrast(1.04) saturate(.92);}
+.frame:hover img{transform:scale(1.06);filter:contrast(1.08) saturate(1.12);}
+.frame.tall img{aspect-ratio:2/3;}
+.frame-cap{position:absolute;bottom:0;left:0;right:0;padding:1.8rem 1rem 1rem;background:linear-gradient(0deg,rgba(13,6,8,.92) 0%,transparent 100%);z-index:3;opacity:0;transform:translateY(6px);transition:all .3s ease;}
+.frame:hover .frame-cap{opacity:1;transform:translateY(0);}
+.frame-cap span{font-family:'Cormorant Garamond',serif;font-size:.88rem;font-style:italic;color:var(--champagne);}
+.bio{padding:5rem 1.5rem;background:var(--dark);z-index:1;position:relative;}
+.bio-inner{max-width:520px;margin:0 auto;}
+.bio-quote{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:300;font-style:italic;line-height:1.55;color:var(--white);margin:1.5rem 0 1.2rem;border-left:2px solid var(--hot-pink);padding-left:1.2rem;}
+.bio-body{font-size:.85rem;line-height:1.9;color:rgba(255,255,255,.6);margin-bottom:.9rem;}
+.bio-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.5rem;border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;text-align:center;}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--hot-pink);display:block;}
+.stat-label{font-size:.62rem;letter-spacing:.2em;color:rgba(255,255,255,.35);text-transform:uppercase;margin-top:.2rem;display:block;}
+.hair-sec{padding:5rem 1.5rem;background:var(--deep-plum);z-index:1;position:relative;}
+.service-list{max-width:500px;margin:0 auto 2.5rem;display:flex;flex-direction:column;gap:1px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.05);}
+.svc{background:var(--deep-plum);padding:1.6rem 1.4rem;position:relative;overflow:hidden;transition:background .3s;}
+.svc::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--hot-pink);transform:scaleY(0);transform-origin:bottom;transition:transform .3s ease;}
+.svc:hover::before{transform:scaleY(1);}
+.svc:hover{background:rgba(232,37,122,.05);}
+.svc-num{font-family:'Cormorant Garamond',serif;font-size:.65rem;color:var(--hot-pink);letter-spacing:.25em;margin-bottom:.4rem;}
+.svc h3{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;color:var(--white);margin-bottom:.3rem;}
+.svc p{font-size:.77rem;color:rgba(255,255,255,.48);line-height:1.65;}
+.svc-pill{display:inline-block;margin-top:.7rem;padding:.18rem .65rem;border:1px solid rgba(201,146,106,.3);font-size:.58rem;letter-spacing:.2em;color:var(--rose-gold);text-transform:uppercase;}
+.academy-sec{padding:5rem 1.5rem;background:var(--dark);z-index:1;position:relative;}
+.tier-cards{display:flex;flex-direction:column;gap:1rem;max-width:500px;margin:0 auto;}
+.tier{border:1px solid rgba(232,37,122,.18);padding:1.8rem 1.4rem;transition:border-color .3s;}
+.tier:hover{border-color:rgba(232,37,122,.5);}
+.tier-badge{display:inline-block;padding:.2rem .7rem;background:var(--hot-pink);font-family:'Tenor Sans',sans-serif;font-size:.55rem;letter-spacing:.25em;color:var(--white);text-transform:uppercase;margin-bottom:.8rem;}
+.tier h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;color:var(--white);margin-bottom:.4rem;}
+.tier p{font-size:.78rem;color:rgba(255,255,255,.5);line-height:1.65;}
+.tier .price{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--rose-gold);margin-top:.8rem;font-style:italic;}
+.video-sec{padding:5rem 1.5rem;background:var(--deep-plum);z-index:1;position:relative;text-align:center;}
+.video-wrap{max-width:500px;margin:2rem auto 0;display:flex;flex-direction:column;gap:1.2rem;}
+.vid-box{position:relative;border:1px solid rgba(232,37,122,.2);overflow:hidden;}
+.vid-box::before{content:'';position:absolute;inset:5px;border:1px solid rgba(201,162,76,.12);z-index:1;pointer-events:none;}
+.vid-box video{width:100%;display:block;max-height:420px;object-fit:cover;}
+.vid-label{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.8rem;color:var(--rose-gold);padding:.5rem;background:rgba(13,6,8,.7);}
+.booking-sec{padding:5rem 1.5rem;background:linear-gradient(180deg,var(--deep-plum) 0%,var(--dark) 100%);text-align:center;z-index:1;position:relative;}
+.booking-inner{max-width:440px;margin:0 auto;}
+.booking-intro{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:rgba(255,255,255,.5);line-height:1.8;margin:1.2rem 0 2.5rem;}
+.book-options{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:2rem;text-align:left;}
+.book-card{border:1px solid rgba(232,37,122,.18);padding:1.4rem 1rem;text-decoration:none;display:block;transition:border-color .3s,transform .2s;}
+.book-card:hover{border-color:var(--hot-pink);transform:translateY(-3px);}
+.book-card-icon{font-size:1.3rem;margin-bottom:.5rem;display:block;}
+.book-card h4{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:400;color:var(--white);margin-bottom:.25rem;}
+.book-card p{font-size:.72rem;color:rgba(255,255,255,.42);line-height:1.5;margin:0;}
+.cashapp-btn{display:inline-flex;align-items:center;gap:.6rem;padding:1rem 2rem;background:linear-gradient(135deg,#00D632,#00a826);color:var(--white);font-family:'Tenor Sans',sans-serif;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;margin-bottom:2rem;transition:transform .2s,opacity .2s;}
+.cashapp-btn:hover{transform:translateY(-2px);opacity:.9;}
+.resources-sec{padding:5rem 1.5rem;background:var(--dark);z-index:1;position:relative;}
+.resource-grid{display:grid;grid-template-columns:1fr;gap:.8rem;max-width:500px;margin:0 auto;}
+.resource-item{border:1px solid rgba(255,255,255,.07);padding:1.3rem 1.2rem;display:flex;align-items:flex-start;gap:1rem;transition:border-color .3s;}
+.resource-item:hover{border-color:rgba(232,37,122,.3);}
+.resource-icon{font-size:1.2rem;flex-shrink:0;margin-top:.1rem;}
+.resource-item h4{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:400;color:var(--white);margin-bottom:.2rem;}
+.resource-item p{font-size:.75rem;color:rgba(255,255,255,.42);line-height:1.55;}
+.resource-item a{font-size:.68rem;color:var(--hot-pink);text-decoration:none;letter-spacing:.1em;display:inline-block;margin-top:.4rem;}
+footer{padding:3rem 1.5rem 2rem;background:var(--deep-plum);text-align:center;z-index:1;position:relative;}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;letter-spacing:.2em;color:var(--white);margin-bottom:.4rem;}
+.footer-logo span{color:var(--hot-pink);}
+.footer-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.85rem;color:rgba(255,255,255,.3);margin-bottom:1rem;}
+.footer-divider{width:40px;height:1px;background:var(--hot-pink);margin:1rem auto;}
+.footer-copy{font-size:.65rem;letter-spacing:.18em;color:rgba(255,255,255,.2);text-transform:uppercase;}
+</style>
+</head>
+<body>
+
+<div class="rose-bg" id="roseBg"></div>
+
+<nav>
+  <a href="#" class="nav-logo">Capital<span>Pea</span></a>
+  <button class="hamburger" id="burger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="menu-overlay" id="menuOverlay">
+  <a href="#bio" onclick="closeMenu()">Biography</a>
+  <a href="#hair" onclick="closeMenu()">Hair Services</a>
+  <a href="#portfolio" onclick="closeMenu()">Portfolio</a>
+  <a href="#academy" onclick="closeMenu()">Model Academy</a>
+  <a href="#booking" onclick="closeMenu()">Book Now</a>
+  <a href="#resources" onclick="closeMenu()">Resources</a>
+  <span class="menu-close-hint">tap to close</span>
+</div>
+
+<section class="hero">
+  <p class="hero-eyebrow">Birmingham · Atlanta · The World</p>
+  <h1 class="hero-title">Capital<em>Pea</em></h1>
+  <p class="hero-sub">Model &nbsp;·&nbsp; Hair Stylist &nbsp;·&nbsp; Empowerment</p>
+  <div class="hero-divider"></div>
+  <div class="hero-btns">
+    <a href="#portfolio" class="btn-p">View Portfolio</a>
+    <a href="#booking" class="btn-o">Book a Session</a>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<section class="split">
+  <div class="split-panel">
+    <!-- ✏️ REPLACE: upload your runway photo to GitHub and change src to e.g. "photos/runway-green.jpg" -->
+    <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800&q=80" alt="CapitalPea Modeling"/>
+    <div class="split-overlay"></div>
+    <div class="split-content">
+      <div class="split-tag">Modeling</div>
+      <h2>On the Runway</h2>
+      <p>Editorial. Commercial. Runway. From Birmingham stages to Atlanta lights.</p>
+      <a href="#portfolio" class="btn-p">See Portfolio</a>
+    </div>
+  </div>
+  <div class="split-panel">
+    <!-- ✏️ REPLACE: upload your hair photo to GitHub and change src -->
+    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80" alt="CapitalPea Hair"/>
+    <div class="split-overlay"></div>
+    <div class="split-content">
+      <div class="split-tag">Hair Services</div>
+      <h2>Luxury Installs</h2>
+      <p>Knotless braids, boho blends, wig sew-ins, loc maintenance. Every install is a masterpiece.</p>
+      <a href="#hair" class="btn-p">Book Hair</a>
+    </div>
+  </div>
+</section>
+
+<section class="portfolio" id="portfolio">
+  <div class="section-header">
+    <span class="section-label">Portfolio</span>
+    <h2 class="section-title">The <em>Gallery</em></h2>
+    <p class="section-sub">She doesn't just walk — she tells a story with every step.</p>
+  </div>
+  <div class="port-grid">
+    <!-- ✏️ REPLACE all src values with your actual photo filenames after uploading to GitHub -->
+    <!-- Example: src="photos/green-gown.jpg" -->
+    <div class="frame span2 tall">
+      <div class="c tl"></div><div class="c tr"></div><div class="c bl"></div><div class="c br"></div>
+      <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&q=80" alt="Runway"/>
+      <div class="frame-cap"><span>Green Goddess · Birmingham Runway</span></div>
+    </div>
+    <div class="frame">
+      <div class="c tl"></div><div class="c tr"></div><div class="c bl"></div><div class="c br"></div>
+      <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&q=80" alt="Editorial"/>
+      <div class="frame-cap"><span>Hot Pink Fringe Set</span></div>
+    </div>
+    <div class="frame">
+      <div class="c tl"></div><div class="c tr"></div><div class="c bl"></div><div class="c br"></div>
+      <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=600&q=80" alt="Gown"/>
+      <div class="frame-cap"><span>White Gown Walk</span></div>
+    </div>
+    <div class="frame">
+      <div class="c tl"></div><div class="c tr"></div><div class="c bl"></div><div class="c br"></div>
+      <img src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=600&q=80" alt="Style"/>
+      <div class="frame-cap"><span>Street Style · Atlanta</span></div>
+    </div>
+    <div class="frame">
+      <div class="c tl"></div><div class="c tr"></div><div class="c bl"></div><div class="c br"></div>
+      <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600&q=80" alt="Beauty"/>
+      <div class="frame-cap"><span>Beauty · Sew-In Install</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="bio" id="bio">
+  <div class="bio-inner">
+    <span class="section-label">About</span>
+    <h2 class="section-title">Her <em>Story</em></h2>
+    <blockquote class="bio-quote">"I didn't wait for a door to open. I built my own runway."</blockquote>
+    <p class="bio-body">Born and raised in Birmingham, Alabama, CapitalPea is a force the industry never saw coming. Growing up in the heart of the South, she learned early that beauty is power — and that power belongs to those bold enough to claim it.</p>
+    <p class="bio-body">She started doing hair in her community, turning living rooms into luxury salons. Her hands became her signature — precise, fearless, and always ahead of the trend. Protective styles, luxury installs, scalp care — she mastered it all because she refused to let her clients settle for anything less than extraordinary.</p>
+    <p class="bio-body">When the runway called, she answered. Strutting stages across Birmingham in gowns, streetwear, and everything in between, she proved that a girl from the 'Ham could hold her own against any model in any room. Now expanding to Atlanta, CapitalPea is on a mission — not just to succeed, but to build a path so wide that every young girl of color behind her has room to walk too.</p>
+    <p class="bio-body">This is more than a brand. This is a blueprint.</p>
+    <div class="bio-stats">
+      <div><span class="stat-num">5+</span><span class="stat-label">Runway Shows</span></div>
+      <div><span class="stat-num">3</span><span class="stat-label">Service Tracks</span></div>
+      <div><span class="stat-num">2</span><span class="stat-label">Cities</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="hair-sec" id="hair">
+  <div class="section-header">
+    <span class="section-label">Hair Services</span>
+    <h2 class="section-title">Luxury <em>Installs</em></h2>
+  </div>
+  <div class="service-list">
+    <div class="svc">
+      <p class="svc-num">01</p>
+      <h3>Knotless &amp; Boho Braids</h3>
+      <p>Natural-looking knotless braids and boho human-hair blends that protect your crown while turning heads. Scalp-health focused, always.</p>
+      <span class="svc-pill">Protective Style</span>
+    </div>
+    <div class="svc">
+      <p class="svc-num">02</p>
+      <h3>Luxury Wig Sew-Ins</h3>
+      <p>Specializing in Platinum Blonde, Turquoise Blue, Hot Pink, and Classic Black &amp; Brown installs. Laid edges, seamless hairline, zero damage.</p>
+      <span class="svc-pill">Luxury Install</span>
+    </div>
+    <div class="svc">
+      <p class="svc-num">03</p>
+      <h3>Loc Maintenance</h3>
+      <p>Retwists, loc extensions, and styling for sisterlocks and traditional locs. Healthy locs start with the right hands.</p>
+      <span class="svc-pill">Natural Hair</span>
+    </div>
+    <div class="svc">
+      <p class="svc-num">04</p>
+      <h3>Scalp Treatments</h3>
+      <p>Deep cleanse, scalp massages, and pre-install care. Beautiful hair starts at the root.</p>
+      <span class="svc-pill">Scalp Health</span>
+    </div>
+  </div>
+  <div style="text-align:center;">
+    <a href="https://cash.app/$Paniece17" target="_blank" class="btn-p">Book Hair · Pay via Cash App $Paniece17</a>
+  </div>
+</section>
+
+<section class="academy-sec" id="academy">
+  <div class="section-header">
+    <span class="section-label">Education</span>
+    <h2 class="section-title">Model <em>Academy</em></h2>
+    <p class="section-sub">For the girl who sees herself on that runway.</p>
+  </div>
+  <div class="tier-cards">
+    <div class="tier">
+      <span class="tier-badge">Tier 1 · Digital</span>
+      <h3>The Birmingham Blueprint</h3>
+      <p>A complete digital guide to breaking into modeling from the South. Posing, agencies, social media strategy, comp card creation — everything she wishes she had at the start.</p>
+      <p class="price">Digital Download</p>
+    </div>
+    <div class="tier">
+      <span class="tier-badge">Tier 2 · Consulting</span>
+      <h3>1-on-1 Portfolio Review</h3>
+      <p>Virtual branding call where she analyzes your current portfolio, your look, and builds a roadmap tailored to YOU. Real strategy, no cookie-cutter advice.</p>
+      <p class="price">Virtual Session</p>
+    </div>
+    <div class="tier">
+      <span class="tier-badge">Tier 3 · The Works</span>
+      <h3>Hair + On-Set Coaching</h3>
+      <p>She styles your hair, then coaches you through posing, movement, and facial expression for your shoot. Walk out looking AND feeling like a model.</p>
+      <p class="price">In-Person Session · ATL or BHM</p>
+    </div>
+  </div>
+</section>
+
+<!-- RUNWAY VIDEOS -->
+
+<section class="video-sec" id="videos">
+  <span class="section-label">In Motion</span>
+  <h2 class="section-title">The <em>Runway</em></h2>
+  <div class="video-wrap">
+    <!--
+      ✏️ HOW TO ADD YOUR VIDEOS:
+      1. Upload your .mov files to GitHub (drag & drop into your repo)
+      2. Replace the placeholder below with this code for EACH video:
+
+```
+  <div class="vid-box">
+    <video controls playsinline poster="">
+      <source src="YOUR-VIDEO-FILENAME.mov" type="video/mp4">
+    </video>
+    <p class="vid-label">Runway Walk · Birmingham</p>
+  </div>
+
+  Example with 3 videos:
+-->
+<div class="vid-box" style="padding:3rem 1.5rem;text-align:center;">
+  <p style="font-family:'Cormorant Garamond',serif;font-style:italic;color:rgba(255,255,255,.3);">Runway videos — upload your .mov files to GitHub and replace this section</p>
+  <span style="font-size:.6rem;letter-spacing:.2em;color:var(--rose-gold);text-transform:uppercase;display:block;margin-top:.8rem;">See comment in code for instructions</span>
+</div>
+```
+
+  </div>
+</section>
+
+<section class="booking-sec" id="booking">
+  <div class="booking-inner">
+    <span class="section-label">Book Now</span>
+    <h2 class="section-title">Let's <em>Create</em></h2>
+    <p class="booking-intro">"Every great look starts with a conversation. Let's build something unforgettable."</p>
+    <div class="book-options">
+      <a href="https://cash.app/$Paniece17" target="_blank" class="book-card">
+        <span class="book-card-icon">✂️</span>
+        <h4>Hair Session</h4>
+        <p>Braids, installs, loc care &amp; scalp treatments</p>
+      </a>
+      <a href="https://cash.app/$Paniece17" target="_blank" class="book-card">
+        <span class="book-card-icon">📸</span>
+        <h4>Book to Model</h4>
+        <p>Editorial, commercial &amp; runway</p>
+      </a>
+      <a href="https://cash.app/$Paniece17" target="_blank" class="book-card">
+        <span class="book-card-icon">🎓</span>
+        <h4>Model Academy</h4>
+        <p>Coaching, reviews &amp; full experience</p>
+      </a>
+      <a href="https://cash.app/$Paniece17" target="_blank" class="book-card">
+        <span class="book-card-icon">🔍</span>
+        <h4>Model Sourcing</h4>
+        <p>Brands — find your perfect model</p>
+      </a>
+    </div>
+    <a href="https://cash.app/$Paniece17" target="_blank" class="cashapp-btn">
+      💚 &nbsp; Pay &amp; Book · Cash App $Paniece17
+    </a>
+  </div>
+</section>
+
+<section class="resources-sec" id="resources">
+  <div class="section-header">
+    <span class="section-label">Community</span>
+    <h2 class="section-title">Empowerment <em>Resources</em></h2>
+    <p class="section-sub">For women of Birmingham, AL and beyond.</p>
+  </div>
+  <div class="resource-grid">
+    <div class="resource-item">
+      <span class="resource-icon">🌸</span>
+      <div>
+        <h4>Women of Stamina</h4>
+        <p>A Birmingham-based organization uplifting women through mentorship, resources, and community sisterhood.</p>
+        <a href="https://www.womenofstamina.org" target="_blank">Visit Resource →</a>
+      </div>
+    </div>
+    <div class="resource-item">
+      <span class="resource-icon">💼</span>
+      <div>
+        <h4>CareerInsite Birmingham</h4>
+        <p>Free career counseling, job training, and professional development resources for women in the Birmingham area.</p>
+        <a href="https://www.careerinsite.org" target="_blank">Visit Resource →</a>
+      </div>
+    </div>
+    <div class="resource-item">
+      <span class="resource-icon">🎓</span>
+      <div>
+        <h4>Model Mentorship</h4>
+        <p>Connecting aspiring models in Alabama and Atlanta with agencies, casting calls, and professional opportunities through CapitalPea.</p>
+        <a href="#booking">Connect Through CapitalPea →</a>
+      </div>
+    </div>
+    <div class="resource-item">
+      <span class="resource-icon">🤝</span>
+      <div>
+        <h4>YWCA Central Alabama</h4>
+        <p>Empowering women and eliminating racism through advocacy, programs, and community support across Alabama.</p>
+        <a href="https://www.ywcabham.org" target="_blank">Visit Resource →</a>
+      </div>
+    </div>
+    <div class="resource-item">
+      <span class="resource-icon">✊🏾</span>
+      <div>
+        <h4>Girls Inc. of Central Alabama</h4>
+        <p>Inspiring all girls to be strong, smart, and bold — mentorship and leadership programs for young women of color.</p>
+        <a href="https://girlsinc-central.org" target="_blank">Visit Resource →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Capital<span>Pea</span></div>
+  <p class="footer-tagline">"From Birmingham to the world — the blueprint is written."</p>
+  <div class="footer-divider"></div>
+  <p class="footer-copy">© 2026 CapitalPea · All Rights Reserved · Birmingham, AL → Atlanta, GA</p>
+</footer>
+
+<script>
+// ROSE PETALS
+const bg=document.getElementById('roseBg');
+['🌸','🌹','✿','❀','🌷','❋'].forEach((s,i)=>{
+  for(let j=0;j<3;j++){
+    const p=document.createElement('span');
+    p.className='petal';
+    p.textContent=s;
+    p.style.left=Math.random()*100+'vw';
+    p.style.animationDuration=(12+Math.random()*16)+'s';
+    p.style.animationDelay=(Math.random()*18)+'s';
+    p.style.fontSize=(.5+Math.random()*.7)+'rem';
+    bg.appendChild(p);
+  }
+});
+
+// HAMBURGER
+const burger=document.getElementById('burger');
+const overlay=document.getElementById('menuOverlay');
+burger.addEventListener('click',()=>{
+  burger.classList.toggle('open');
+  overlay.classList.toggle('open');
+});
+overlay.addEventListener('click',e=>{
+  if(e.target===overlay||e.target.classList.contains('menu-close-hint')) closeMenu();
+});
+function closeMenu(){
+  burger.classList.remove('open');
+  overlay.classList.remove('open');
+}
+
+// SCROLL REVEAL
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.style.opacity='1';
+      e.target.style.transform='translateY(0)';
+    }
+  });
+},{threshold:0.1});
+document.querySelectorAll('.svc,.tier,.frame,.resource-item,.book-card,.bio-quote,.bio-body').forEach(el=>{
+  el.style.opacity='0';
+  el.style.transform='translateY(18px)';
+  el.style.transition='opacity .65s ease, transform .65s ease';
+  obs.observe(el);
+});
+</script>
+
+</body>
+</html>
