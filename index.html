@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CapitalPea | Birmingham, AL</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:#F0EBE3;color:#2D1B2E;line-height:1.5}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+button{cursor:pointer;font-family:inherit;border:none;background:none}
+body{background-color:#F0EBE3;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4c5b5' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.font-hand{font-family:'Caveat',cursive}
+.container{max-width:1200px;margin:0 auto;padding:0 16px}
+.hide{display:none!important}
+.text-center{text-align:center}
+.w-full{width:100%}
+.mx-auto{margin-left:auto;margin-right:auto}
+.mb-1{margin-bottom:4px}.mb-2{margin-bottom:8px}.mb-3{margin-bottom:12px}.mb-4{margin-bottom:16px}.mb-6{margin-bottom:24px}
+.mt-2{margin-top:8px}.mt-4{margin-top:16px}.mt-6{margin-top:24px}
+.p-2{padding:8px}.p-3{padding:12px}.p-4{padding:16px}
+.py-3{padding-top:12px;padding-bottom:12px}.py-4{padding-top:16px;padding-bottom:16px}.py-8{padding-top:32px;padding-bottom:32px}
+.px-3{padding-left:12px;padding-right:12px}.px-4{padding-left:16px;padding-right:16px}
+.r{display:inline-flex;align-items:center;justify-content:center;color:#fff;font-weight:900;text-transform:uppercase;letter-spacing:0.05em;box-shadow:1px 2px 0 rgba(0,0,0,0.15);padding:2px 8px;margin:1px;font-size:12px}
+.rb{font-size:20px;padding:4px 10px;margin:2px}
+@media(min-width:640px){.rb{font-size:32px;padding:6px 14px}}
+@media(min-width:768px){.rb{font-size:48px;padding:8px 18px}}
+.pp{background:#fff;padding:6px 6px 20px 6px;box-shadow:2px 3px 10px rgba(0,0,0,0.12);position:relative}
+.tape{position:relative}
+.tape::before{content:'';position:absolute;top:-10px;left:50%;transform:translateX(-50%) rotate(-3deg);width:50px;height:16px;background:rgba(255,182,193,0.65);z-index:5;box-shadow:0 1px 2px rgba(0,0,0,0.08)}
+.pin::after{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);width:10px;height:10px;border-radius:50%;background:#E91E63;box-shadow:0 1px 3px rgba(0,0,0,0.3);z-index:6}
+.tt{border-top:3px dashed #D4A5B8}
+.tb{border-bottom:3px dashed #D4A5B8}
+.pc{background:#FAF6F0}.ppk{background:#FFE4EC}.pm{background:#E0F5E8}.py{background:#FFF8DC}.pl{background:#F0E6FF}
+nav{z-index:50;transition:all .3s}
+.nf{position:fixed;top:0;left:0;right:0;background:rgba(250,246,240,0.95);box-shadow:0 2px 10px rgba(0,0,0,0.08)}
+.nl{font-family:'Caveat',cursive;font-size:18px;color:#8B1546;transition:transform .2s;background:none;border:none;cursor:pointer}
+.nl:hover{transform:scale(1.1)}
+.mob{position:fixed;inset:0;z-index:55;background:rgba(250,246,240,0.98);padding-top:80px;padding-left:24px;padding-right:24px}
+.mob button{display:block;width:100%;text-align:left;font-family:'Caveat',cursive;font-size:24px;padding:12px 0;color:#E91E63;background:none;border:none}
+.dd{position:absolute;opacity:.4;pointer-events:none}
+.cp{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;padding:8px 16px;border-radius:4px;border:2px solid transparent;transition:all .2s;white-space:nowrap;cursor:pointer}
+.cpa{background:#E91E63;color:#fff}
+.cpi{background:rgba(255,255,255,0.5);color:#6B1A3A;border:2px dashed #D4A5B8}
+.sc{background:#FFE4EC;padding:8px;cursor:pointer;transition:transform .2s;box-shadow:2px 2px 0 rgba(0,0,0,0.08)}
+.sc:hover{transform:scale(1.03)}
+.si{width:100%;aspect-ratio:4/3;object-fit:cover;border:2px solid #fff;display:block;background:#FFE4EC}
+.po{background:#fff;padding:6px 6px 16px 6px;box-shadow:2px 3px 10px rgba(0,0,0,0.1);cursor:pointer;transition:transform .2s;break-inside:avoid;margin-bottom:8px;position:relative}
+.po:hover{transform:scale(1.02)}
+.po img{width:100%;display:block;background:#FAF6F0;min-height:120px}
+.rc{background:#FAF6F0;padding:16px;box-shadow:2px 2px 0 rgba(0,0,0,0.06)}
+.cb{background:#FFF8DC;border:2px dashed #FF9800;padding:12px}
+.iw{position:relative}
+.iw svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:#D4A5B8;pointer-events:none}
+.iw textarea~svg{top:20px;transform:none}
+.in{width:100%;padding:10px 10px 10px 34px;border:2px dashed #E8B4C0;border-radius:4px;font-size:13px;font-family:inherit;color:#4A1A2E;background:#fff}
+.in:focus{outline:none;border-color:#E91E63}
+textarea.in{padding-left:34px;padding-top:10px;resize:none}
+footer{background:#2D1B2E;color:#fff;border-top:3px dashed #E91E63}
+.mo{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center;padding:16px}
+.mb{background:#fff;width:100%;max-width:400px;max-height:90vh;overflow-y:auto;box-shadow:4px 4px 0 rgba(0,0,0,0.15)}
+.mh{display:flex;align-items:center;justify-content:space-between;padding:16px;border-bottom:2px dashed #F5D5E0}
+.cbt{position:fixed;bottom:16px;right:16px;z-index:50;width:48px;height:48px;border-radius:50%;background:#E91E63;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:transform .2s;border:none;cursor:pointer;font-size:20px}
+.cbt:hover{transform:scale(1.1)}
+.cpn{position:fixed;bottom:16px;right:16px;z-index:50;width:340px;max-width:calc(100vw - 32px);height:460px;background:#fff;display:flex;flex-direction:column;box-shadow:3px 3px 0 rgba(0,0,0,0.15)}
+.ch{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;background:#FFF0F3;border-bottom:2px dashed #F5D5E0}
+.cms{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:10px;background:#FAF6F0}
+.cbu{max-width:80%;padding:10px 12px;border-radius:12px;font-size:12px;line-height:1.5;align-self:flex-end;background:#E91E63;color:#fff}
+.cbb{max-width:80%;padding:10px 12px;border-radius:12px;font-size:12px;line-height:1.5;align-self:flex-start;background:#fff;color:#4A1A2E;border:1px solid #F5D5E0}
+.cia{padding:10px;border-top:2px dashed #F5D5E0;display:flex;gap:8px}
+.cin{flex:1;padding:8px 12px;border:2px dashed #E8B4C0;border-radius:4px;font-size:12px;font-family:inherit;background:#FAF6F0;color:#4A1A2E}
+.cin:focus{outline:none;border-color:#E91E63}
+.csn{padding:8px 12px;background:#E91E63;color:#fff;border-radius:4px;font-size:12px;border:none;cursor:pointer}
+.td{display:flex;gap:4px;padding:8px 12px;background:#fff;border:1px solid #F5D5E0;border-radius:12px;align-self:flex-start}
+.td span{width:6px;height:6px;background:#E91E63;border-radius:50%;animation:bn 1s infinite}
+.td span:nth-child(2){animation-delay:.15s}
+.td span:nth-child(3){animation-delay:.3s}
+@keyframes bn{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.lb{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,0.8);display:flex;align-items:center;justify-content:center;padding:16px;cursor:pointer}
+.lb img{max-width:100%;max-height:85vh;object-fit:contain;background:#fff;padding:8px;box-shadow:0 10px 40px rgba(0,0,0,0.3)}
+@keyframes fu{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.rv{animation:fu .6s ease forwards;opacity:0}
+.r1{animation-delay:.1s}
+.r2{animation-delay:.2s}
+.r3{animation-delay:.3s}
+.r4{animation-delay:.4s}
+.r5{animation-delay:.5s}
+.tp{font-size:8px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;padding:2px 8px;color:#fff;display:inline-block}
+.washi{height:12px;background:repeating-linear-gradient(45deg,#FFB6C1,#FFB6C1 6px,#FF69B4 6px,#FF69B4 12px);margin-bottom:16px;transform:rotate(-0.5deg);box-shadow:0 1px 2px rgba(0,0,0,0.1)}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:#D4A5B8;border-radius:3px}
+@media(min-width:640px){.smf{display:flex}.smg2{grid-template-columns:repeat(2,1fr)}.smg3{grid-template-columns:repeat(3,1fr)}.smfr{flex-direction:row}}
+@media(min-width:768px){.mdf{display:flex}.mdh{display:none}.mdg4{grid-template-columns:repeat(4,1fr)}}
+.msn{columns:2;column-gap:8px}
+@media(min-width:640px){.msn{columns:3}}
+@media(min-width:768px){.msn{columns:4}}
+.g{display:grid;gap:12px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.f{display:flex;align-items:center;justify-content:space-between}
+.fw{flex-wrap:wrap}
+.fc{flex-direction:column}
+.jc{justify-content:center}
+.ac{align-items:center}
+.g1{gap:4px}.g2{gap:8px}.g3{gap:12px}.g4{gap:16px}
+</style>
+</head>
+<body>
+
+<nav id="nb">
+  <div class="container f" style="padding:12px 16px">
+    <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false"><span id="nl"></span></a>
+    <div class="mdf g3" style="display:none" id="dn">
+      <button class="nl" onclick="ss('services')">Services</button>
+      <button class="nl" onclick="ss('portfolio')">Portfolio</button>
+      <button class="nl" onclick="ss('resources')">Resources</button>
+      <button class="nl" onclick="ss('contact')">Contact</button>
+    </div>
+    <button class="mdh" style="color:#E91E63;background:none;border:none;font-size:24px" onclick="tm()">&#9776;</button>
+  </div>
+</nav>
+
+<div id="mm" class="mob hide">
+  <button style="position:absolute;top:16px;right:16px;font-size:28px;color:#E91E63;background:none;border:none" onclick="tm()">&#10005;</button>
+  <button onclick="ss('services');tm()" style="color:#E91E63">Services</button>
+  <button onclick="ss('portfolio');tm()" style="color:#9C27B0">Portfolio</button>
+  <button onclick="ss('resources');tm()" style="color:#FF5722">Resources</button>
+  <button onclick="ss('contact');tm()" style="color:#4CAF50">Contact</button>
+</div>
+
+<section class="relative" style="padding:32px 16px 48px;overflow:hidden">
+  <svg class="dd" style="top:48px;left:8%;width:24px;height:24px;transform:rotate(12deg)" viewBox="0 0 24 24" fill="none" stroke="#E91E63" stroke-width="2"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9"/></svg>
+  <svg class="dd" style="top:80px;right:10%;width:20px;height:20px" viewBox="0 0 24 24" fill="#FF9800"><path d="M12 0L14 10L24 12L14 14L12 24L10 14L0 12L10 10Z"/></svg>
+  <svg class="dd" style="bottom:64px;left:5%;width:20px;height:20px;opacity:.4" viewBox="0 0 24 24" fill="none" stroke="#E91E63" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+  <svg class="dd" style="top:120px;left:3%;width:16px;height:16px;opacity:.3" viewBox="0 0 24 24" fill="none" stroke="#9C27B0" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+
+  <div class="container text-center relative" style="z-index:10;max-width:640px">
+    <div class="rv mb-2" id="h1"></div>
+    <div class="rv r1 mb-2" id="h2"></div>
+    <div class="rv r2 mb-6" id="h3"></div>
+
+    <div class="rv r3 f ac jc g3 mb-6 fw">
+      <div class="pp tape" style="transform:rotate(-3deg);width:100px">
+        <img src="hero1.jpg" alt="Box Braids" style="width:100%;aspect-ratio:3/4;object-fit:cover" onerror="this.style.display='none';this.parentElement.style.background='#FFE4EC';this.parentElement.style.minHeight='140px'">
+      </div>
+      <div class="pp tape pin" style="transform:rotate(2deg);width:100px;margin-top:-16px">
+        <img src="hero2.jpg" alt="Modeling" style="width:100%;aspect-ratio:3/4;object-fit:cover" onerror="this.style.display='none';this.parentElement.style.background='#F0E6FF';this.parentElement.style.minHeight='140px'">
+      </div>
+      <div class="pp tape" style="transform:rotate(-2deg);width:100px;margin-top:8px">
+        <img src="hero3.jpg" alt="Locs" style="width:100%;aspect-ratio:3/4;object-fit:cover" onerror="this.style.display='none';this.parentElement.style.background='#E0F5E8';this.parentElement.style.minHeight='140px'">
+      </div>
+    </div>
+
+    <p class="rv r4 font-hand" style="font-size:28px;color:#C2187B;margin-bottom:16px">Wear it Royal.</p>
+
+    <div class="rv r4 inline-block px-4 py-2 ppk mb-6" style="transform:rotate(1deg)">
+      <span class="font-hand" style="font-size:16px;color:#8B1546">Birmingham, Alabama</span>
+    </div>
+
+    <div class="rv r5 f fc smfr ac jc g3">
+      <button onclick="ss('services')" class="px-8 py-3 text-white text-sm font-black uppercase tracking-widest" style="background:#E91E63;box-shadow:0 4px 12px rgba(233,30,99,0.3)">Book Now</button>
+      <a href="https://cash.app/$Paniece17" target="_blank" class="px-6 py-3 text-sm font-black uppercase tracking-wider" style="color:#E91E63;border:2px dashed #E91E63">$Paniece17</a>
+    </div>
+  </div>
+</section>
+
+<section class="ppk tt tb" style="padding:48px 16px">
+  <div class="container f fc smfr ac g4" style="max-width:768px">
+    <div class="pp tape flex-shrink-0 pin" style="transform:rotate(-3deg)">
+      <img src="mission.jpg" alt="CapitalPea" style="width:120px;height:120px;object-fit:cover" onerror="this.style.display='none';this.parentElement.style.background='#FFE4EC';this.parentElement.style.minHeight='120px';this.parentElement.style.width='120px'">
+    </div>
+    <div class="pc p-4 relative" style="box-shadow:2px 2px 0 rgba(0,0,0,0.06)">
+      <div style="position:absolute;left:12px;top:0;bottom:0;width:2px;background:#E91E63;opacity:.3"></div>
+      <div class="washi" style="position:absolute;top:-6px;left:20px;right:20px;height:10px;transform:rotate(1deg)"></div>
+      <h3 class="font-hand mb-2" style="font-size:24px;color:#8B1546;margin-left:12px">Our Mission</h3>
+      <div class="mb-3" style="margin-left:12px">
+        <span class="tp" style="background:#E91E63">Education</span>
+        <span class="tp" style="background:#9C27B0">Opportunity</span>
+        <span class="tp" style="background:#FF5722">Empowerment</span>
+      </div>
+      <p style="font-size:13px;color:#5C3A4A;margin-left:12px;line-height:1.6">I build confidence and create opportunities. Every client who sits in my chair or walks through my door gets elevated.</p>
+    </div>
+  </div>
+</section>
+
+<section id="services" style="padding:48px 16px;background:#FAF6F0">
+  <div class="container" style="max-width:900px">
+    <div class="pc mx-auto mb-6 relative" style="max-width:500px;padding:20px 24px;box-shadow:2px 2px 0 rgba(0,0,0,0.06)">
+      <div style="position:absolute;left:16px;top:0;bottom:0;width:2px;background:#FFB6C1"></div>
+      <div class="washi" style="position:absolute;top:-5px;left:30px;right:30px;height:10px;transform:rotate(-1deg)"></div>
+      <div class="text-center" style="margin-left:12px">
+        <div class="mb-1" id="sr"></div>
+        <h2 class="font-hand" style="font-size:28px;color:#8B1546">What We Do</h2>
+      </div>
+    </div>
+
+    <div class="f ac jc g2 mb-6 fw" id="st">
+      <button class="cp cpa" data-cat="all" onclick="fs('all')">&#10022; All</button>
+      <button class="cp cpi" data-cat="hair" onclick="fs('hair')">&#9986; Hair</button>
+      <button class="cp cpi" data-cat="modeling" onclick="fs('modeling')">&#128247; Model</button>
+      <button class="cp cpi" data-cat="coaching" onclick="fs('coaching')">&#10024; Coach</button>
+    </div>
+
+    <div class="g g2 smg3 mdg4" id="sg" style="gap:12px"></div>
+
+    <div class="f fc smfr ac jc g3 mt-6">
+      <button onclick="sqm()" class="px-6 py-3 text-white text-xs font-black uppercase tracking-widest" style="background:#E91E63">Get on the List!</button>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio" style="padding:48px 16px;background:#FAF6F0">
+  <div class="container" style="max-width:900px">
+    <div class="text-center mb-6">
+      <div class="mb-2" id="pr"></div>
+      <h2 class="font-hand" style="font-size:28px;color:#8B1546">The Collective</h2>
+    </div>
+    <div class="msn" id="pg"></div>
+  </div>
+</section>
+
+<section id="resources" style="padding:48px 16px;background:#FFF0F3">
+  <div class="container" style="max-width:900px">
+    <div class="text-center mb-6">
+      <div class="mb-2" id="rr"></div>
+      <h2 class="font-hand" style="font-size:28px;color:#8B1546">Community Resources</h2>
+      <p style="font-size:12px;color:#5C3A4A;margin-top:4px">You are not alone. Birmingham & surrounding areas.</p>
+    </div>
+
+    <div class="cb mb-6">
+      <p style="font-size:12px;font-weight:700;color:#8B1546;text-align:center">
+        In danger? Call <a href="tel:911" style="color:#F44336;text-decoration:underline">911</a> or DV Hotline <a href="tel:1-800-799-7233" style="color:#F44336;text-decoration:underline">1-800-799-7233</a>
+      </p>
+    </div>
+
+    <div class="f ac jc g2 mb-6 fw" id="rt">
+      <button class="cp cpa" data-cat="all" onclick="fr('all')">All</button>
+      <button class="cp cpi" data-cat="domestic_violence" onclick="fr('domestic_violence')">DV Help</button>
+      <button class="cp cpi" data-cat="drug_abuse" onclick="fr('drug_abuse')">Recovery</button>
+      <button class="cp cpi" data-cat="homelessness" onclick="fr('homelessness')">Shelter</button>
+      <button class="cp cpi" data-cat="mental_health" onclick="fr('mental_health')">Mental</button>
+    </div>
+
+    <div class="g" id="rg" style="gap:12px;grid-template-columns:1fr"></div>
+  </div>
+</section>
+
+<section id="contact" style="padding:48px 16px;background:#FAF6F0">
+  <div class="container" style="max-width:500px">
+    <div class="text-center mb-6">
+      <h2 class="font-hand" style="font-size:28px;color:#8B1546">Let's Connect!</h2>
+    </div>
+
+    <div class="f ac jc g4 mb-6 fw">
+      <div class="ppk px-4 py-3" style="transform:rotate(-2deg)">
+        <p style="font-size:16px;text-align:center">&#128205;</p>
+        <p style="font-size:10px;font-weight:700;color:#5C3A4A;text-align:center">Birmingham, AL</p>
+      </div>
+      <a href="https://cash.app/$Paniece17" target="_blank" class="pm px-4 py-3" style="transform:rotate(1deg);display:block">
+        <p style="font-size:16px;text-align:center">&#128184;</p>
+        <p style="font-size:10px;font-weight:700;color:#5C3A4A;text-align:center">$Paniece17</p>
+      </a>
+    </div>
+
+    <form id="cf" onsubmit="sc(event)">
+      <div class="f g3 mb-3">
+        <div class="iw" style="flex:1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <input type="text" required placeholder="Name" class="in">
+        </div>
+        <div class="iw" style="flex:1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <input type="email" required placeholder="Email" class="in">
+        </div>
+      </div>
+      <div class="iw mb-3">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="top:14px"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        <textarea required rows="4" placeholder="What's up?" class="in"></textarea>
+      </div>
+      <button type="submit" class="w-full py-3 text-white text-sm font-black uppercase tracking-widest" style="background:#E91E63;display:flex;align-items:center;justify-content:center;gap:8px">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        Send It!
+      </button>
+      <p id="cs" class="hide text-center font-hand mt-3" style="font-size:20px;color:#4CAF50">&#10003; Message Sent!</p>
+    </form>
+  </div>
+</section>
+
+<footer class="py-10 px-4">
+  <div class="container" style="max-width:900px">
+    <div class="f fw ac" style="justify-content:space-between;gap:16px;margin-bottom:24px">
+      <div id="fl"></div>
+      <div class="f g3 fw">
+        <a href="#services" onclick="ss('services');return false" style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.7)">Services</a>
+        <a href="#portfolio" onclick="ss('portfolio');return false" style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.7)">Portfolio</a>
+        <a href="#resources" onclick="ss('resources');return false" style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.7)">Resources</a>
+      </div>
+    </div>
+    <div class="f fc smfr ac" style="justify-content:space-between;gap:8px;padding-top:16px;border-top:1px dashed rgba(255,255,255,0.15)">
+      <p style="font-size:10px;color:rgba(255,255,255,0.4)">Made with &#9829; by CapitalPea &copy; <span id="yr"></span></p>
+      <p style="font-size:9px;color:rgba(255,255,255,0.2)">AASOTU Media Group LLC</p>
+    </div>
+  </div>
+</footer>
+
+<button class="cbt" id="cb" onclick="tc()">&#128172;</button>
+<div class="cpn hide" id="cp">
+  <div class="ch">
+    <div class="f ac g1"><span style="font-size:16px">&#129302;</span><span style="font-size:12px;font-weight:700;color:#8B1546">CapitalPea</span></div>
+    <button onclick="tc()" style="background:none;border:none;color:#8A6A7A;font-size:18px">&#10005;</button>
+  </div>
+  <div class="cms" id="cm"><div class="cbb">Hey girl! Ask me about hair, modeling, or coaching!</div></div>
+  <div class="cia">
+    <input type="text" id="ci" class="cin" placeholder="Ask me anything..." onkeydown="if(event.key==='Enter')sch()">
+    <button class="csn" id="csd" onclick="sch()">Send</button>
+  </div>
+</div>
+
+<div id="bm" class="mo hide" onclick="cbm(event)">
+  <div class="mb" onclick="event.stopPropagation()">
+    <div class="mh">
+      <div><h3 class="font-hand" style="font-size:20px;color:#8B1546">Book Appointment</h3><p style="font-size:12px;font-weight:700;color:#E91E63" id="bsn"></p></div>
+      <button onclick="hbm()" style="background:none;border:none;color:#8A6A7A;font-size:20px">&#10005;</button>
+    </div>
+    <div id="bfc" class="p-4">
+      <form onsubmit="sb(event)">
+        <div class="g g2 mb-3" style="grid-template-columns:1fr 1fr;gap:8px">
+          <input type="date" required class="in" style="padding-left:10px" id="bd">
+          <input type="time" required class="in" style="padding-left:10px" id="bt">
+        </div>
+        <div class="mb-3"><input type="text" required placeholder="Your Name" class="in" style="padding-left:10px" id="bn"></div>
+        <div class="mb-3"><input type="email" required placeholder="Email" class="in" style="padding-left:10px" id="be"></div>
+        <div class="mb-3"><input type="tel" placeholder="Phone" class="in" style="padding-left:10px" id="bp"></div>
+        <div class="mb-3"><textarea rows="3" placeholder="Notes" class="in" style="padding-left:10px" id="bno"></textarea></div>
+        <button type="submit" class="w-full py-3 text-white text-xs font-black uppercase tracking-widest" style="background:#E91E63">Request Booking</button>
+      </form>
+    </div>
+    <div id="bs" class="hide p-4 text-center">
+      <p style="font-size:40px;margin-bottom:8px">&#9989;</p>
+      <p class="font-hand" style="font-size:20px;color:#8B1546">Booked!</p>
+      <p style="font-size:12px;color:#5C3A4A;margin-bottom:16px">We'll confirm your appointment soon.</p>
+      <a href="https://cash.app/$Paniece17" target="_blank" class="inline-block px-6 py-2 text-xs font-black uppercase tracking-wider text-white" style="background:#00C853">Pay Deposit</a>
+    </div>
+  </div>
+</div>
+
+<div id="qm" class="mo hide" onclick="cqm(event)">
+  <div class="mb" onclick="event.stopPropagation()">
+    <div class="mh">
+      <div><h3 class="font-hand" style="font-size:20px;color:#8B1546">Get on the List</h3><p style="font-size:12px;color:#5C3A4A">Tell us what you need</p></div>
+      <button onclick="hqm()" style="background:none;border:none;color:#8A6A7A;font-size:20px">&#10005;</button>
+    </div>
+    <div id="qfc" class="p-4">
+      <form onsubmit="sq(event)">
+        <div class="g g2 mb-3" style="grid-template-columns:1fr 1fr 1fr;gap:8px">
+          <button type="button" class="cp cpa" data-st="hair" onclick="sqt('hair')">&#9986; Hair</button>
+          <button type="button" class="cp cpi" data-st="modeling" onclick="sqt('modeling')">&#128247; Model</button>
+          <button type="button" class="cp cpi" data-st="coaching" onclick="sqt('coaching')">&#10024; Coach</button>
+        </div>
+        <div class="mb-3">
+          <select class="in" id="qb" style="padding-left:10px">
+            <option value="under50">Under $50</option>
+            <option value="50to100">$50 - $100</option>
+            <option value="100to200">$100 - $200</option>
+            <option value="200plus">$200+</option>
+            <option value="consultation" selected>Not sure</option>
+          </select>
+        </div>
+        <div class="g g2 mb-3" style="grid-template-columns:1fr 1fr;gap:8px">
+          <input type="text" required placeholder="Name" class="in" style="padding-left:10px" id="qn">
+          <input type="email" required placeholder="Email" class="in" style="padding-left:10px" id="qe">
+        </div>
+        <div class="mb-3"><input type="tel" placeholder="Phone" class="in" style="padding-left:10px" id="qp"></div>
+        <div class="mb-3"><textarea rows="3" placeholder="What are you looking for?" class="in" style="padding-left:10px" id="qd"></textarea></div>
+        <div class="f g2 mb-3">
+          <button type="button" class="cp cpi" style="flex:1" data-urg="low" onclick="su('low')">Low</button>
+          <button type="button" class="cp cpa" style="flex:1" data-urg="medium" onclick="su('medium')">Medium</button>
+          <button type="button" class="cp cpi" style="flex:1" data-urg="high" onclick="su('high')">High</button>
+        </div>
+        <button type="submit" class="w-full py-3 text-white text-xs font-black uppercase tracking-widest" style="background:#E91E63">Submit</button>
+      </form>
+    </div>
+    <div id="qs" class="hide p-4 text-center">
+      <p style="font-size:40px;margin-bottom:8px">&#9989;</p>
+      <p class="font-hand" style="font-size:20px;color:#8B1546">You're on the list!</p>
+      <p style="font-size:12px;color:#5C3A4A;margin-bottom:16px">We'll reach out soon.</p>
+      <button onclick="hqm()" class="px-6 py-2 text-xs font-black uppercase tracking-wider text-white" style="background:#E91E63">Close</button>
+    </div>
+  </div>
+</div>
+
+<div id="lb" class="lb hide" onclick="hlb()">
+  <button style="position:absolute;top:16px;right:16px;color:#fff;font-size:32px;background:none;border:none">&#10005;</button>
+  <img src="" alt="" id="li" onclick="event.stopPropagation()">
+</div>
+<script>
+const RC=["#E91E63","#9C27B0","#FF5722","#4CAF50","#2196F3","#FF9800","#F44336","#673AB7"];
+function R(t,b){return t.split('').map((c,i)=>{if(c===' ')return'<span style="width:4px;display:inline-block"></span>';const r=(Math.random()*6-3).toFixed(1);const cls=b?'r rb':'r';return`<span class="${cls}" style="background:${RC[i%RC.length]};transform:rotate(${r}deg)">${c}</span>`;}).join('');}
+document.getElementById('h1').innerHTML=R('YOUR',true);
+document.getElementById('h2').innerHTML=R('HAIR IS',true);
+document.getElementById('h3').innerHTML=R('YOUR CROWN',true);
+document.getElementById('nl').innerHTML=R('CAPITALPEA',false);
+document.getElementById('sr').innerHTML=R('WHAT WE DO',false);
+document.getElementById('pr').innerHTML=R('THE COLLECTIVE',false);
+document.getElementById('rr').innerHTML=R('COMMUNITY',false);
+document.getElementById('fl').innerHTML=R('CAPITALPEA',false);
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+function ss(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth'});}
+function tm(){document.getElementById('mm').classList.toggle('hide');}
+window.addEventListener('scroll',()=>{const n=document.getElementById('nb');if(window.scrollY>60)n.classList.add('nf');else n.classList.remove('nf');});
+
+const AS=[
+  {id:1,name:"Box Braids",cat:"hair",price:"150",dur:240,img:"service-hair1.jpg"},
+  {id:2,name:"Locs Install",cat:"hair",price:"200",dur:300,img:"service-hair2.jpg"},
+  {id:3,name:"Locs Retwist",cat:"hair",price:"85",dur:120,img:"service-hair3.jpg"},
+  {id:4,name:"Two-Strand Twists",cat:"hair",price:"100",dur:180,img:"service-hair4.jpg"},
+  {id:5,name:"Goddess Braids",cat:"hair",price:"120",dur:180,img:"service-hair5.jpg"},
+  {id:6,name:"Hair Consult",cat:"hair",price:"50",dur:60,img:"service-hair6.jpg"},
+  {id:7,name:"Portfolio Shoot",cat:"modeling",price:"300",dur:180,img:"service-model1.jpg"},
+  {id:8,name:"Runway Coaching",cat:"modeling",price:"150",dur:120,img:"service-model2.jpg"},
+  {id:9,name:"Talent Assessment",cat:"modeling",price:"75",dur:90,img:"service-model3.jpg"},
+  {id:10,name:"Life Coaching",cat:"coaching",price:"100",dur:60,img:"service-coach1.jpg"},
+  {id:11,name:"Career Coaching",cat:"coaching",price:"125",dur:90,img:"service-coach2.jpg"},
+  {id:12,name:"Empowerment Session",cat:"coaching",price:"100",dur:60,img:"service-coach3.jpg"},
+];
+let CS='all';
+function fs(cat){CS=cat;document.querySelectorAll('#st .cp').forEach(b=>{if(b.dataset.cat===cat){b.classList.add('cpa');b.classList.remove('cpi');}else{b.classList.remove('cpa');b.classList.add('cpi');}});rs();}
+function rs(){const g=document.getElementById('sg');const f=CS==='all'?AS:AS.filter(s=>s.cat===CS);g.innerHTML=f.map(s=>`<div class="sc" onclick="obm(${s.id})"><img src="${s.img}" alt="${s.name}" class="si" onerror="this.style.display='none';this.parentElement.querySelector('.ph').style.display='flex'"><div class="ph hide" style="width:100%;aspect-ratio:4/3;background:#FFE4EC;display:none;align-items:center;justify-content:center"><span class="font-hand" style="color:#D4A5B8;font-size:14px">Your Photo</span></div><div style="margin-top:6px;display:flex;align-items:center;justify-content:space-between"><span class="font-hand" style="font-size:14px;color:#8B1546">${s.name}</span><span style="font-size:11px;font-weight:800;color:#E91E63">$${s.price}</span></div><div style="display:flex;align-items:center;gap:4px;margin-top:2px"><span class="tp" style="background:#E91E63">${s.cat}</span><span style="font-size:9px;color:#8A6A7A">${s.dur}m</span></div></div>`).join('');}
+rs();
+
+const PF=[
+  {id:1,img:"portfolio1.jpg",title:"Royal Crown",cat:"hair"},
+  {id:2,img:"portfolio2.jpg",title:"Urban Elegance",cat:"modeling"},
+  {id:3,img:"portfolio3.jpg",title:"Golden Locs",cat:"hair"},
+  {id:4,img:"portfolio4.jpg",title:"Bold Expression",cat:"modeling"},
+  {id:5,img:"portfolio5.jpg",title:"Natural Beauty",cat:"hair"},
+  {id:6,img:"portfolio6.jpg",title:"Locs Portrait",cat:"hair"},
+  {id:7,img:"portfolio7.jpg",title:"Empowerment",cat:"lifestyle"},
+  {id:8,img:"portfolio8.jpg",title:"Goddess Style",cat:"hair"},
+  {id:9,img:"portfolio9.jpg",title:"Precision Twists",cat:"hair"},
+  {id:10,img:"portfolio10.jpg",title:"Motion",cat:"modeling"},
+  {id:11,img:"portfolio11.jpg",title:"Coaching",cat:"lifestyle"},
+  {id:12,img:"portfolio12.jpg",title:"Career",cat:"lifestyle"},
+];
+const CC={hair:'#E91E63',modeling:'#9C27B0',lifestyle:'#FF5722'};
+function rp(){const g=document.getElementById('pg');g.innerHTML=PF.map((item,i)=>{const rt=i%3===0?-2:i%3===1?1:2;return`<div class="po" style="transform:rotate(${rt}deg)" onclick="slb('${item.img}')"><img src="${item.img}" alt="${item.title}" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='#FAF6F0';this.parentElement.style.minHeight='120px'"><div style="margin-top:6px;padding:0 2px;display:flex;align-items:center;justify-content:space-between"><span class="tp" style="background:${CC[item.cat]}">${item.cat}</span><span class="font-hand" style="font-size:10px;color:#8B1546">${item.title}</span></div></div>`;}).join('');}
+rp();
+function slb(src){document.getElementById('li').src=src;document.getElementById('lb').classList.remove('hide');document.body.style.overflow='hidden';}
+function hlb(){document.getElementById('lb').classList.add('hide');document.body.style.overflow='';}
+
+const AR=[
+  {id:1,name:"One Place Metro Alabama",cat:"domestic_violence",phone:"(205) 977-5000",address:"2200 7th Ave S, Birmingham, AL",desc:"Comprehensive services for DV survivors including counseling, legal advocacy, and safety planning.",web:"https://oneplacebirmingham.org"},
+  {id:2,name:"National DV Hotline",cat:"domestic_violence",phone:"1-800-799-7233",desc:"24/7 confidential support for anyone experiencing domestic violence.",web:"https://www.thehotline.org"},
+  {id:3,name:"Aletheia House",cat:"drug_abuse",phone:"(205) 324-6502",address:"2012 5th Ave N, Birmingham, AL",desc:"Substance abuse treatment, prevention, and housing services.",web:"https://www.aletheiahouse.org"},
+  {id:4,name:"SAMHSA Helpline",cat:"drug_abuse",phone:"1-800-662-4357",desc:"National helpline for substance abuse and mental health. Free, confidential, 24/7.",web:"https://www.samhsa.gov/find-help"},
+  {id:5,name:"Birmingham Outreach Center",cat:"homelessness",phone:"(205) 252-9576",address:"6269 2nd Ave S, Birmingham, AL",desc:"Day shelter providing meals, showers, laundry, case management.",web:"https://www.firehouseshelter.org"},
+  {id:6,name:"Jimmie Hale Mission",cat:"homelessness",phone:"(205) 323-5877",address:"3420 2nd Ave N, Birmingham, AL",desc:"Emergency shelter, transitional housing, and comprehensive support.",web:"https://www.jimmiehalemission.com"},
+  {id:7,name:"Crisis Center Birmingham",cat:"mental_health",phone:"(205) 323-7777",desc:"24/7 crisis counseling, suicide prevention, and mental health support.",web:"https://www.crisiscenterbham.org"},
+  {id:8,name:"YWCA Central Alabama",cat:"domestic_violence",phone:"(205) 322-9922",address:"309 23rd St N, Birmingham, AL",desc:"DV shelter, counseling, and support services for women and children.",web:"https://www.ywca-bham.org"},
+  {id:9,name:"United Way 211",cat:"mental_health",phone:"211",desc:"Connects individuals with essential services: housing, food, utility assistance.",web:"https://www.uwca.org"},
+  {id:10,name:"AA Central Office AL",cat:"drug_abuse",phone:"(205) 324-4925",desc:"Alcoholics Anonymous meetings and resources throughout Alabama.",web:"https://www.aacentraloffice.org"},
+];
+const REC={all:'#E91E63',domestic_violence:'#F44336',drug_abuse:'#FF9800',homelessness:'#2196F3',mental_health:'#9C27B0'};
+let CR='all';
+function fr(cat){CR=cat;document.querySelectorAll('#rt .cp').forEach(b=>{if(b.dataset.cat===cat){b.classList.add('cpa');b.classList.remove('cpi');}else{b.classList.remove('cpa');b.classList.add('cpi');}});rr();}
+function rr(){const g=document.getElementById('rg');const f=CR==='all'?AR:AR.filter(r=>r.cat===CR);g.innerHTML=f.map(r=>`<div class="rc"><span class="tp mb-2" style="background:${REC[r.cat]}">${r.cat.replace('_',' ')}</span><h4 style="font-size:14px;font-weight:700;color:#4A1A2E;margin:4px 0">${r.name}</h4>${r.desc?`<p style="font-size:11px;color:#5C3A4A;margin-bottom:8px;line-height:1.5">${r.desc}</p>`:''}<div style="display:flex;flex-direction:column;gap:4px">${r.phone?`<a href="tel:${r.phone}" style="font-size:11px;color:#5C3A4A;display:flex;align-items:center;gap:4px">&#128222; ${r.phone}</a>`:''}${r.address?`<p style="font-size:11px;color:#8A6A7A;display:flex;align-items:center;gap:4px">&#128205; ${r.address}</p>`:''}${r.web?`<a href="${r.web}" target="_blank" style="font-size:11px;font-weight:700;color:#E91E63;display:inline-flex;align-items:center;gap:4px;margin-top:4px">&#127760; Visit Website &#8594;</a>`:''}</div></div>`).join('');}
+rr();
+
+let SI=null;
+function obm(id){SI=id;const svc=AS.find(s=>s.id===id);document.getElementById('bsn').textContent=svc?svc.name:'';document.getElementById('bfc').classList.remove('hide');document.getElementById('bs').classList.add('hide');document.getElementById('bm').classList.remove('hide');document.body.style.overflow='hidden';}
+function hbm(){document.getElementById('bm').classList.add('hide');document.body.style.overflow='';}
+function cbm(e){if(e.target===e.currentTarget)hbm();}
+function sb(e){e.preventDefault();document.getElementById('bfc').classList.add('hide');document.getElementById('bs').classList.remove('hide');}
+
+let QT='hair',QU='medium';
+function sqm(){document.getElementById('qfc').classList.remove('hide');document.getElementById('qs').classList.add('hide');document.getElementById('qm').classList.remove('hide');document.body.style.overflow='hidden';}
+function hqm(){document.getElementById('qm').classList.add('hide');document.body.style.overflow='';}
+function cqm(e){if(e.target===e.currentTarget)hqm();}
+function sqt(type){QT=type;document.querySelectorAll('[data-st]').forEach(b=>{if(b.dataset.st===type){b.classList.add('cpa');b.classList.remove('cpi');}else{b.classList.remove('cpa');b.classList.add('cpi');}});}
+function su(urg){QU=urg;document.querySelectorAll('[data-urg]').forEach(b=>{if(b.dataset.urg===urg){b.classList.add('cpa');b.classList.remove('cpi');}else{b.classList.remove('cpa');b.classList.add('cpi');}});}
+function sq(e){e.preventDefault();document.getElementById('qfc').classList.add('hide');document.getElementById('qs').classList.remove('hide');}
+
+function sc(e){e.preventDefault();document.getElementById('cf').classList.add('hide');document.getElementById('cs').classList.remove('hide');}
+
+function tc(){document.getElementById('cp').classList.toggle('hide');document.getElementById('cb').classList.toggle('hide');}
+const CK=[
+  {q:['braid','braids','box braid'],a:'Box Braids are $150 and take about 4 hours. Classic protective style with clean parting. Want to book? Click a service card!'},
+  {q:['loc','locs','dreadlock','dreadlocks'],a:'We do Locs Installation ($200, ~5 hours) and Locs Retwist ($85, ~2 hours). Expert care for healthy, beautiful locs!'},
+  {q:['twist','twists'],a:'Two-Strand Twists are $100 for about 3 hours. Beautiful, defined twists that can be styled so many ways!'},
+  {q:['goddess','goddess braid'],a:'Goddess Braids are $120 for about 3 hours. Large, cornrow-style braids — bold and regal!'},
+  {q:['consult','consultation'],a:'Natural Hair Consultation is $50 for 1 hour. We assess your hair type and build a personalized care routine.'},
+  {q:['model','modeling','portfolio'],a:'Portfolio Photo Sessions are $300 (3hrs). Runway Coaching is $150 (2hrs). Talent Assessment is $75. Let\'s build your portfolio!'},
+  {q:['coach','coaching','life coach','career'],a:'Life Coaching $100/hr, Career Coaching $125/90min, Empowerment Sessions $100/hr. Building your confidence and future!'},
+  {q:['price','cost','how much'],a:'Hair: $50-$200. Modeling: $75-$300. Coaching: $100-$125. CashApp: $Paniece17'},
+  {q:['pay','payment','cashapp','deposit'],a:'All payments through CashApp: $Paniece17. Pay before or after your appointment!'},
+  {q:['book','appointment','schedule'],a:'Tap any service card to book! Or click "Get on the List" and we\'ll reach out.'},
+  {q:['where','location','address','birmingham'],a:'We are based in Birmingham, Alabama! Exact address provided when your appointment is confirmed.'},
+  {q:['dv','domestic','abuse','violence','hotline'],a:'If you\'re in danger, call 911. National DV Hotline: 1-800-799-7233 (24/7). One Place Birmingham: (205) 977-5000. You are not alone.'},
+  {q:['drug','addiction','recovery','rehab','substance'],a:'SAMHSA: 1-800-662-4357 (24/7). Aletheia House: (205) 324-6502. AA Central Office: (205) 324-4925. Help is available.'},
+  {q:['homeless','shelter','housing'],a:'Birmingham Outreach: (205) 252-9576. Jimmie Hale Mission: (205) 323-5877. United Way: Dial 211. People want to help.'},
+  {q:['crisis','mental','suicide','depression','help'],a:'Crisis Center Birmingham: (205) 323-7777 (24/7). Emergency? Call 911. You matter. Help is available right now.'},
+  {q:['hour','hours','open'],a:'By appointment! Use the booking form or "Get on the List" and we\'ll find a time that works.'},
+  {q:['hello','hi','hey','what up'],a:'Hey girl! Welcome to CapitalPea. I can help with hair services, modeling bookings, coaching info, or community resources. What do you need?'},
+];
+function fa(input){const q=input.toLowerCase();for(const item of CK){if(item.q.some(kw=>q.includes(kw)))return item.a;}return "I can help with hair services (braids, locs, twists), modeling bookings, life/career coaching, or community resources in Birmingham. What would you like to know?";}
+function sch(){const i=document.getElementById('ci');const m=i.value.trim();if(!m)return;const msgs=document.getElementById('cm');msgs.innerHTML+=`<div class="cbu">${m}</div>`;i.value='';msgs.innerHTML+=`<div class="td" id="ty"><span></span><span></span><span></span></div>`;msgs.scrollTop=msgs.scrollHeight;setTimeout(()=>{document.getElementById('ty')?.remove();msgs.innerHTML+=`<div class="cbb">${fa(m)}</div>`;msgs.scrollTop=msgs.scrollHeight;},800);}
+
+const IO=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.style.animationPlayState='running';IO.unobserve(entry.target);}});},{threshold:0.1});
+document.querySelectorAll('.rv').forEach(el=>{el.style.animationPlayState='paused';IO.observe(el);});
+</script>
+</body>
+</html>
